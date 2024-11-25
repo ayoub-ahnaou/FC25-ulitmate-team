@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Ga+Maamli&family=Russo+One&display=swap');
+
 :root {
     /* define the color of palette */
     --mainBlack: #1A1A1A;
@@ -16,3 +18,10 @@ html { font-size: 14px; background: var(--mainBlack); color: white; font-family:
 @media (min-width: 1280px) { .container { width: 95%;} }
 @media (max-width: 1024px) { .container { width: 100%; padding: 1rem; } }
 @media (max-width: 640px) { html { font-size: 12px; } .container { padding: .5rem; } }
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.check { border: 1px solid red; }
