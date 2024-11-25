@@ -1,6 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ["./src/**/*.{html,js}"],
+  blocklist: ["container"],
   theme: {
     extend: {
       colors: {
@@ -9,6 +10,10 @@ module.exports = {
         softGray: "#f5f5f5",
         goldColor: "#B8860B",
         mainBlack: "#1A1A1A",
+      },
+      fontFamily: {
+        gaMaamli: ["Ga Maamli", "sans-serif"],
+        russoOne: ["Russo One", "sans-serif"],
       }
     },
   },
