@@ -25,3 +25,4 @@ html { font-size: 14px; background: var(--mainBlack); color: white; font-family:
     align-items: center;
 }
 .check { border: 1px solid red; }
+.background { background: url("../images/fc25-authenticity.jpg"); }
