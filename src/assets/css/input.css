@@ -10,3 +10,9 @@
     --softGray: #f5f5f5;
     --goldColor: #B8860B;
 }
+html { font-size: 14px; background: var(--mainBlack); color: white; font-family: "Russo One", sans-serif; }
+.container { width: 90%; }
+@media (min-width: 2048px) { html { font-size: 24px; } }
+@media (min-width: 1280px) { .container { width: 95%;} }
+@media (max-width: 1024px) { .container { width: 100%; padding: 1rem; } }
+@media (max-width: 640px) { html { font-size: 12px; } .container { padding: .5rem; } }
