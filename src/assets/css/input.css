@@ -29,3 +29,16 @@ html { font-size: 14px; background: var(--mainBlack); color: white; font-family:
 .hover-effect img {
     @apply  hover:scale-110 transition-all delay-100 ease-in-out;
 }
+
+/* width */
+::-webkit-scrollbar { width: 10px; }
+  
+/* Track */
+::-webkit-scrollbar-track { background: var(--darkGray); }
+
+/* Handle */
+::-webkit-scrollbar-thumb { background: #555; }
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover { background: #6f6f6f; }
+@media (max-width: 420px) { .players-container::-webkit-scrollbar { display: none; } }
