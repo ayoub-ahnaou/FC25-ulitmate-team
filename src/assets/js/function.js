@@ -6,6 +6,9 @@ const background = document.querySelector(".background");
 const playerDetailsContainer = document.getElementById("player-details-container");
 window.showPlayerDetails = (player_id) => {
     const player = players[player_id - 1];
+    const stats_keys = Object.keys(player.stats);
+    const stats_values = Object.values(player.stats);
+
     body.classList.add("my-body-noscroll-class");
     background.classList.add("blur");
     playerDetailsContainer.classList.remove("hidden")
@@ -27,25 +30,7 @@ window.showPlayerDetails = (player_id) => {
                 </div>
             </div>
             <div class="bg-darkGray w-1/3 h-full max-md:w-full flex flex-col p-4 gap-2 max-md:gap-6 justify-between">
-                <div class="flex flex-col gap-2">
-                    <div class="flex justify-between items-center">
-                        <span>Pace</span> <span class="p-1 text-black rounded-md bg-veryPoor">19</span>
-                    </div>
-                    <div class="flex justify-between items-center">
-                        <span>Shooting</span> <span class="p-1 text-black rounded-md bg-poor">38</span>
-                    </div>
-                    <div class="flex justify-between items-center">
-                        <span>Passing</span> <span class="p-1 text-black rounded-md bg-average">50</span>
-                    </div>
-                    <div class="flex justify-between items-center">
-                        <span>Dribbling</span> <span class="p-1 text-black rounded-md bg-aboveAverage">62</span>
-                    </div>
-                    <div class="flex justify-between items-center">
-                        <span>Defending</span> <span class="p-1 text-black rounded-md bg-good">84</span>
-                    </div>
-                    <div class="flex justify-between items-center">
-                        <span>Physical</span> <span class="p-1 text-black rounded-md bg-excellent">94</span>
-                    </div>
+                <div class="flex flex-col gap-2" id="stats-details">
                 </div>
                 <div class="h-10 max-md:mt-12 items-center flex justify-end gap-2">
                     <span class="cursor-pointer"></span>
@@ -54,6 +39,14 @@ window.showPlayerDetails = (player_id) => {
             </div>
         </div>
     `;
+    
+    for(let i=0; i<6; i++){
+        document.getElementById("stats-details").innerHTML += `
+            <div class="flex justify-between items-center">
+                <span>${stats_keys[i]}</span> <span class="p-1 text-black rounded-md bg-veryPoor">${stats_values[i]}</span>
+            </div>
+        `;
+    }
 }
 
 document.addEventListener("click", (e) => {
