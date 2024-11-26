@@ -42,3 +42,6 @@ html { font-size: 14px; background: var(--mainBlack); color: white; font-family:
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover { background: #6f6f6f; }
 @media (max-width: 420px) { .players-container::-webkit-scrollbar { display: none; } }
+body.my-body-noscroll-class {
+    overflow: hidden;
+}
