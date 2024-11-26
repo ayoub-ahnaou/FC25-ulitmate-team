@@ -55,3 +55,13 @@ window.showPlayerDetails = (player_id) => {
         </div>
     `;
 }
+
+document.addEventListener("click", (e) => {
+    if(e.target.id == "player-details-container"){
+        body.classList.remove("my-body-noscroll-class");
+        background.classList.remove("blur");
+        playerDetailsContainer.classList.add("hidden")
+        playerDetailsContainer.classList.remove("fixed");
+        playerDetailsContainer.innerHTML = "";
+    }
+})
