@@ -29,6 +29,9 @@ html { font-size: 14px; background: var(--mainBlack); color: white; font-family:
 .img-shadow-effect {
     @apply overflow-hidden hover:drop-shadow-[0_0_10px_rgba(184,134,11,0.6)] delay-75 transition-all;
 }
+.gold-shadow { 
+    @apply drop-shadow-[0_0_10px_rgba(184,134,11,0.6)];
+}
 
 /* width */
 ::-webkit-scrollbar { width: 10px; }
