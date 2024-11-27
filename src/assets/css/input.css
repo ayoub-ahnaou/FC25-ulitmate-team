@@ -26,8 +26,8 @@ html { font-size: 14px; background: var(--mainBlack); color: white; font-family:
 }
 .check { border: 1px solid red; }
 .background { background: url("../images/fc25-authenticity.jpg"); }
-.hover-effect img {
-    @apply  hover:scale-110 transition-all delay-100 ease-in-out;
+.img-shadow-effect {
+    @apply overflow-hidden hover:drop-shadow-[0_0_10px_rgba(184,134,11,0.6)] delay-75 transition-all;
 }
 
 /* width */
