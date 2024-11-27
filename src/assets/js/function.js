@@ -30,8 +30,7 @@ window.showPlayerDetails = (player_id) => {
                 </div>
             </div>
             <div class="bg-darkGray w-1/3 h-full max-md:w-full flex flex-col p-4 gap-2 max-md:gap-6 justify-between">
-                <div class="flex flex-col gap-2" id="stats-details">
-                </div>
+                <div class="flex flex-col gap-2" id="stats-details">    </div>
                 <div class="h-10 max-md:mt-12 items-center flex justify-end gap-2">
                     <span class="cursor-pointer"></span>
                     <span class="cursor-pointer">More Option</span>
@@ -39,12 +38,20 @@ window.showPlayerDetails = (player_id) => {
             </div>
         </div>
     `;
-    
     for(let i=0; i<6; i++){
         document.getElementById("stats-details").innerHTML += `
-            <div class="flex justify-between items-center">
-                <span>${stats_keys[i]}</span> <span class="p-1 text-black rounded-md bg-veryPoor">${stats_values[i]}</span>
-            </div>
+        <div class="flex justify-between items-center">
+            <span>${stats_keys[i]}</span>
+            <span 
+                class="p-1 text-black rounded-md ${stats_values[i] <= 20 ? "bg-veryPoor" : 
+                    (stats_values[i] <= 40 ? "bg-poor" : 
+                        (stats_values[i] <= 60 ? "bg-average" : 
+                            (stats_values[i] <= 80 ? "bg-aboveAverage" : 
+                                (stats_values[i] <= 90 ? "bg-good" : 
+                                    'bg-excellent'))))}" >
+                ${stats_values[i]}
+            </span>
+        </div>
         `;
     }
 }
