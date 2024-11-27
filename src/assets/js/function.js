@@ -71,3 +71,6 @@ const goalkepeers = players.filter((gk) => gk.position === "GK")
 const centralMidfielders = players.filter((cm) => cm.position === "CM")
 const deffencers = players.filter((cb) => cb.position === "CB" || cb.position === "RB" || cb.position === "LB")
 const attackers = players.filter((ac) => ac.position === "RW" || ac.position === "LW" || ac.position === "ST")
+
+const starters = []; // array where the 11 players will be stored
+const bench = []; // array where changment will be stored
