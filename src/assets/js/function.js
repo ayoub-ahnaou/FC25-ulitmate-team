@@ -56,6 +56,7 @@ window.showPlayerDetails = (player_id) => {
     }
 }
 
+// functionmment of closing the details player when user click outside of the box
 document.addEventListener("click", (e) => {
     if(e.target.id == "player-details-container"){
         body.classList.remove("my-body-noscroll-class");
@@ -65,3 +66,8 @@ document.addEventListener("click", (e) => {
         playerDetailsContainer.innerHTML = "";
     }
 })
+
+const goalkepeers = players.filter((gk) => gk.position === "GK")
+const centralMidfielders = players.filter((cm) => cm.position === "CM")
+const deffencers = players.filter((cb) => cb.position === "CB" || cb.position === "RB" || cb.position === "LB")
+const attackers = players.filter((ac) => ac.position === "RW" || ac.position === "LW" || ac.position === "ST")
