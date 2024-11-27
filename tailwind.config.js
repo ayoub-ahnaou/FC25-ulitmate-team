@@ -16,7 +16,7 @@ module.exports = {
         average: "#FFD700", // 41 - 60
         aboveAverage: "#FFA500", // 61 - 80
         good: "#32CD32", // 81 - 90
-        excellent: "#16FF05", // 91 - 100
+        excellent: "#05ffde", // 91 - 100 
       },
       fontFamily: {
         gaMaamli: ["Ga Maamli", "sans-serif"],
