@@ -70,6 +70,8 @@ const starters = JSON.parse(localStorage.getItem("starters")) || []; // array wh
 const bench = JSON.parse(localStorage.getItem("bench")) || []; // array where changment will be stored
 const team = JSON.parse(localStorage.getItem("team")) || []; // variable contains all players starters and bench
 
+const cancelBtn = document.getElementById("cancel-btn");
+
 // function to add a player from the list players to the TEAM
 window.addPlayerToTeam = (player_position, card_position, players_role, type, add_icons_id) => {
     // player position: CM/RM/CB... card_position: goalKeeper, centreRightBack, centralMidfielder, centralRightMidfielder... type: bench/starter
@@ -96,6 +98,13 @@ window.addPlayerToTeam = (player_position, card_position, players_role, type, ad
     cancelBtn.classList.remove("hidden");
     card_area.classList.add("gold-shadow");
 
+    // show all players if the user want cancel the add action
+    cancelBtn.onclick = () => {
+        document.getElementById(add_icons_id).style.display = "flex";
+        cancelBtn.classList.add("hidden");
+        card_area.classList.remove("gold-shadow");
+        list_players();
+    }
 }
 
 // function to update list players with possible players based on the position
