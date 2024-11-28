@@ -79,13 +79,17 @@ window.showPlayerDetails = (player_id) => {
 // functionmment of closing the details player when user click outside of the box
 document.addEventListener("click", (e) => {
     if(e.target.id == "player-details-container"){
-        body.classList.remove("my-body-noscroll-class");
-        background.classList.remove("blur");
-        playerDetailsContainer.classList.add("hidden")
-        playerDetailsContainer.classList.remove("fixed");
-        playerDetailsContainer.innerHTML = "";
+        closeDetailsPopUpPlayer();
     }
 })
+
+function closeDetailsPopUpPlayer() {
+    body.classList.remove("my-body-noscroll-class");
+    background.classList.remove("blur");
+    playerDetailsContainer.classList.add("hidden")
+    playerDetailsContainer.classList.remove("fixed");
+    playerDetailsContainer.innerHTML = "";
+}
 
 const starters = JSON.parse(localStorage.getItem("starters")) || []; // array where the 11 players will be stored
 const bench = JSON.parse(localStorage.getItem("bench")) || []; // array where changment will be stored
