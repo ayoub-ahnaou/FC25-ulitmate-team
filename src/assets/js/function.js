@@ -105,6 +105,36 @@ window.addPlayerToTeam = (player_position, card_position, players_role, type, ad
         card_area.classList.remove("gold-shadow");
         list_players();
     }
+
+    window.appendPlayerToTeam = (player_id) => {
+        const player = players[player_id - 1];
+        player.selected = true;
+        card_area.innerHTML = `
+            <img src="../assets/images/stadium/card-normal.webp" class="h-full" alt="">
+            <div class="h-3/5 w-full absolute top-0 flex pl-2 cursor-pointer" onclick="showPlayerDetails('${player.id}')">
+                <div class="w-1/4 flex flex-col items-center justify-center">
+                    <p class="text-lg max-sm:text-xs font-bold">${player.rating}</p>
+                    <img src=${player.logo} class="max-md:size-auto" alt="">
+                </div>
+                <div class="center w-3/4">
+                    <img src=${player.photo} class="w-full" alt="">
+                </div>
+            </div>
+            <p class="absolute bottom-0 text-[.7rem] max-md:text-[.5rem] h-2/5 px-1 text-center w-full font-bold">${player.name}</p>
+        `;
+
+        if(type == "starter") starters.push(player);
+        if(type == "bench") bench.push(player);
+        team.push(player); // push the player to team
+
+        cancelBtn.classList.add("hidden");
+        card_area.classList.remove("gold-shadow");
+        localStorage.setItem("starters", JSON.stringify(starters));
+        localStorage.setItem("bench", JSON.stringify(bench));
+        localStorage.setItem("team", JSON.stringify(team));
+        
+        list_players();
+    }
 }
 
 // function to update list players with possible players based on the position
@@ -128,4 +158,21 @@ function updateListPlayers(array) {
             </div>
         `;
     });
+}
+
+// function to show the option list available for the player selected
+window.playerOption = () => {
+    const optionList = document.getElementById("player-option-list");
+    optionList.style.bottom = "0";
+}
+
+// function to close the option list
+window.closePlayerOption = () => {
+    const optionList = document.getElementById("player-option-list");
+    optionList.style.bottom = "-100%";
+}
+
+// function to handle adding player from option list
+window.insertPlayerIntoTeam = (player_id) => {
+
 }
