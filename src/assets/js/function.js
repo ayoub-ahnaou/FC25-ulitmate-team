@@ -70,6 +70,27 @@ const starters = JSON.parse(localStorage.getItem("starters")) || []; // array wh
 const bench = JSON.parse(localStorage.getItem("bench")) || []; // array where changment will be stored
 const team = JSON.parse(localStorage.getItem("team")) || []; // variable contains all players starters and bench
 
+// function to add a player from the list players to the TEAM
+window.addPlayerToTeam = (player_position, card_position, players_role, type, add_icons_id) => {
+    // player position: CM/RM/CB... card_position: goalKeeper, centreRightBack, centralMidfielder, centralRightMidfielder... type: bench/starter
+    let goalkepeers = players.filter((gk) => gk.position === "GK" && !gk.selected)
+    let deffenders = players.filter((cb) => (cb.position === "CB" || cb.position === "RB" || cb.position === "LB") && !cb.selected)
+    let midfielders = players.filter((cm) => cm.position === "CM" && !cm.selected)
+    let attackers = players.filter((ac) => (ac.position === "RW" || ac.position === "LW" || ac.position === "ST") && !ac.selected)
+    
+    const card_area = document.getElementById(card_position);
+
+    document.getElementById(add_icons_id).style.display = "none"; // hide the plus icon
+    // show the players filtered
+    if(players_role == "goalkepeers") updateListPlayers(goalkepeers); 
+    if(players_role == "deffenders") updateListPlayers(deffenders); 
+    if(players_role == "midfielders") updateListPlayers(midfielders); 
+    if(players_role == "attackers") updateListPlayers(attackers); 
+    cancelBtn.classList.remove("hidden");
+    card_area.classList.add("gold-shadow");
+
+}
+
 // function to update list players with possible players based on the position
 function updateListPlayers(array) {
     const playersList = document.getElementById("players-list");
