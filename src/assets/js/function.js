@@ -199,5 +199,16 @@ window.closePlayerOption = () => {
 
 // function to handle adding player from option list
 window.insertPlayerIntoTeam = (player_id) => {
+    const player = players[player_id - 1];
+    closeDetailsPopUpPlayer();
 
+    const toastWarning = document.getElementById("toast-warning");
+    toastWarning.style.right = "1%";
+
+    document.addEventListener("click", (e) => {
+        if(e.target.id == "toast-warning"){
+            toastWarning.style.right = "-100%";
+        }
+    })
+    setTimeout(() => toastWarning.style.right = "-100%", 10000);
 }
