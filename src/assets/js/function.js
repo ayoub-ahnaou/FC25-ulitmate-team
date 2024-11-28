@@ -4,7 +4,7 @@ const players = data.players;
 
 const background = document.querySelector(".background");
 const playerDetailsContainer = document.getElementById("player-details-container");
-window.showPlayerDetails = (player_id) => {
+window.showPlayerDetails = (player_id, player_position, card_position, players_role, add_icons_id, type) => {
     const player = players[player_id - 1];
     const stats_keys = Object.keys(player.stats);
     const stats_values = Object.values(player.stats);
@@ -42,7 +42,7 @@ window.showPlayerDetails = (player_id) => {
                     <span class="cursor-pointer" onclick="closePlayerOption()">X</span>
                 </div>
                 <div class="flex-grow-0 pb-4">
-                    <p class="px-4 cursor-pointer hover:bg-gray-100">
+                    <p class="px-4 cursor-pointer hover:bg-gray-100" onclick="removePlayerFromTeam('${player.id}', '${player_position}', '${card_position}', '${players_role}', '${add_icons_id}', '${type}')">
                         ${player.selected ? "Remove player from team" : ""}
                     </p>
                     <p class="px-4 cursor-pointer hover:bg-gray-100" onclick="insertPlayerIntoTeam('${player.id}')">
@@ -136,7 +136,7 @@ window.addPlayerToTeam = (player_position, card_position, players_role, type, ad
         player.selected = true;
         card_area.innerHTML = `
             <img src="../assets/images/stadium/card-normal.webp" class="h-full" alt="">
-            <div class="h-3/5 w-full absolute top-0 flex pl-2 cursor-pointer" onclick="showPlayerDetails('${player.id}')">
+            <div class="h-3/5 w-full absolute top-0 flex pl-2 cursor-pointer" onclick="showPlayerDetails('${player.id}', '${player_position}', '${card_position}', '${players_role}', '${add_icons_id}', '${type}')">
                 <div class="w-1/4 flex flex-col items-center justify-center">
                     <p class="text-lg max-sm:text-xs font-bold">${player.rating}</p>
                     <img src=${player.logo} class="max-md:size-auto" alt="">
@@ -207,8 +207,32 @@ window.insertPlayerIntoTeam = (player_id) => {
 
     document.addEventListener("click", (e) => {
         if(e.target.id == "toast-warning"){
-            toastWarning.style.right = "-100%";
+            toastWarning.style.right = "-200%";
         }
     })
-    setTimeout(() => toastWarning.style.right = "-100%", 10000);
+    setTimeout(() => toastWarning.style.right = "-200%", 10000);
+}
+
+// function to handle remove a player from the starter or bench players
+window.removePlayerFromTeam = (player_id, player_position, card_position, players_role, add_icons_id, type) => {
+    const player = players[player_id - 1];
+    const card_area = document.getElementById(card_position);
+
+    player.selected = false;
+    card_area.innerHTML = `
+        <img src="../assets/images/stadium/card-normal.webp" class="h-full" alt="">
+        <div class="absolute top-0 bottom-0 w-full center flex-col gap-2" id="${add_icons_id}">
+            <img onclick="addPlayerToTeam('${player_position}', '${card_position}', '${players_role}', '${type}', '${add_icons_id}')" src="../assets/images/icons/plus-square.svg" class="h-10 cursor-pointer" alt="">
+            <span class="text-darkGray">${player_position}</span>
+        </div>
+    `;
+
+    const toast_succes = document.getElementById("toast-succes");
+    toast_succes.textContent = `Player removed succsefully from ${type}`;
+    toast_succes.style.right = "1%";
+    setTimeout(() => {
+        toast_succes.style.right = "-100%";
+    }, 2000);
+
+    closeDetailsPopUpPlayer();
 }
