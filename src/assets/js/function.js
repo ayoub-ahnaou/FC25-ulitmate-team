@@ -80,6 +80,13 @@ window.addPlayerToTeam = (player_position, card_position, players_role, type, ad
     
     const card_area = document.getElementById(card_position);
 
+    // Style for toast notification
+    const toast_notif = document.getElementById("toast-notif");
+    toast_notif.style.right = "1%";
+    setTimeout(() => {
+        toast_notif.style.right = "-100%";
+    }, 2000);
+
     document.getElementById(add_icons_id).style.display = "none"; // hide the plus icon
     // show the players filtered
     if(players_role == "goalkepeers") updateListPlayers(goalkepeers); 
