@@ -11,6 +11,7 @@
       "club": "Inter Miami",
       "logo": "https://cdn.sofifa.net/meta/team/239235/120.png",
       "rating": 93,
+      "selected": false,
       "stats": {
         "pace": 85,
         "shooting": 92,
@@ -31,6 +32,7 @@
       "club": "Al Nassr",
       "logo": "https://cdn.sofifa.net/meta/team/2506/120.png",
       "rating": 91,
+      "selected": false,
       "stats": {
         "pace": 84,
         "shooting": 94,
@@ -49,8 +51,9 @@
       "nationality": "Belgium",
       "flag": "https://cdn.sofifa.net/flags/be.png",
       "club": "Manchester City",
-      "logo": "https://cdn.sofifa.net/players/239/085/25_120.png",
+      "logo": "https://cdn3.futbin.com/content/fifa25/img/clubs/dark/10.png?fm=png&ixlib=java-2.1.0&verzion=2&w=22&s=67f166a320e787b2bc47f4f4b8407180",
       "rating": 91,
+      "selected": false,
       "stats": {
         "pace": 74,
         "shooting": 86,
@@ -71,6 +74,7 @@
       "club": "Real Madrid",
       "logo": "https://cdn.sofifa.net/meta/team/3468/120.png",
       "rating": 92,
+      "selected": false,
       "stats": {
         "pace": 97,
         "shooting": 89,
@@ -91,6 +95,7 @@
       "club": "Liverpool",
       "logo": "https://cdn.sofifa.net/meta/team/8/120.png",
       "rating": 90,
+      "selected": false,
       "stats": {
         "pace": 75,
         "shooting": 60,
@@ -111,6 +116,7 @@
       "club": "Real Madrid",
       "logo": "https://cdn.sofifa.net/meta/team/3468/120.png",
       "rating": 88,
+      "selected": false,
       "stats": {
         "pace": 82,
         "shooting": 55,
@@ -131,6 +137,7 @@
       "club": "Al-Hilal",
       "logo": "https://cdn.sofifa.net/meta/team/7011/120.png",
       "rating": 90,
+      "selected": false,
       "stats": {
         "pace": 91,
         "shooting": 83,
@@ -143,7 +150,7 @@
     {
       "id": 8,
       "name": "Mohamed Salah",
-      "photo": "https://cdn.sofifa.net/players/192/985/25_120.png",
+      "photo": "https://cdn3.futbin.com/content/fifa25/img/players/209331.png?fm=png&ixlib=java-2.1.0&verzion=4&w=157&s=65b376486f38e702b8a213fef45bf895",
       "large_pic": "https://english.ahram.org.eg/Media/News/2023/3/21/41_2023-638150102087627410-762.jpg",
       "position": "RW",
       "nationality": "Egypt",
@@ -151,6 +158,7 @@
       "club": "Liverpool",
       "logo": "https://cdn.sofifa.net/meta/team/8/120.png",
       "rating": 89,
+      "selected": false,
       "stats": {
         "pace": 93,
         "shooting": 87,
@@ -171,6 +179,7 @@
       "club": "Bayern Munich",
       "logo": "https://cdn.sofifa.net/meta/team/503/120.png",
       "rating": 89,
+      "selected": false,
       "stats": {
         "pace": 70,
         "shooting": 75,
@@ -191,6 +200,7 @@
       "club": "Atletico Madrid",
       "logo": "https://cdn.sofifa.net/meta/team/7980/120.png",
       "rating": 91,
+      "selected": false,
       "stats": {
         "diving": 89,
         "handling": 90,
@@ -211,6 +221,7 @@
       "club": "Real Madrid",
       "logo": "https://cdn.sofifa.net/meta/team/3468/120.png",
       "rating": 88,
+      "selected": false,
       "stats": {
         "pace": 74,
         "shooting": 78,
@@ -231,6 +242,7 @@
       "club": "Real Madrid",
       "logo": "https://cdn.sofifa.net/meta/team/3468/120.png",
       "rating": 89,
+      "selected": false,
       "stats": {
         "pace": 91,
         "shooting": 88,
@@ -251,6 +263,7 @@
       "club": "Real Madrid",
       "logo": "https://cdn.sofifa.net/meta/team/3468/120.png",
       "rating": 82,
+      "selected": false,
       "stats": {
         "pace": 85,
         "shooting": 74,
@@ -271,6 +284,7 @@
       "club": "Al-Ittihad",
       "logo": "https://cdn.sofifa.net/meta/team/476/120.png",
       "rating": 90,
+      "selected": false,
       "stats": {
         "pace": 77,
         "shooting": 90,
@@ -289,8 +303,9 @@
       "nationality": "Norway",
       "flag": "https://cdn.sofifa.net/flags/no.png",
       "club": "Manchester City",
-      "logo": "https://cdn.sofifa.net/players/239/085/25_120.png",
+      "logo": "https://cdn3.futbin.com/content/fifa25/img/clubs/dark/10.png?fm=png&ixlib=java-2.1.0&verzion=2&w=22&s=67f166a320e787b2bc47f4f4b8407180",
       "rating": 91,
+      "selected": false,
       "stats": {
         "pace": 89,
         "shooting": 94,
@@ -311,6 +326,7 @@
       "club": "Al-Ittihad",
       "logo": "https://cdn.sofifa.net/meta/team/476/120.png",
       "rating": 87,
+      "selected": false,
       "stats": {
         "pace": 77,
         "shooting": 66,
@@ -324,13 +340,14 @@
       "id": 17,
       "name": "Alphonso Davies",
       "photo": "https://cdn.sofifa.net/players/234/396/25_120.png",
-      "large_pic": "https://tmssl.akamaized.net//images/foto/galerie/kante-al-ittihad-1700162838-122033.jpg?lm=1700162922",
+      "large_pic": "https://cdn.vox-cdn.com/thumbor/PN6jlEof9kclJYJzHLrDMhsMTFM=/0x0:3404x4432/1200x800/filters:focal(1429x554:1973x1098)/cdn.vox-cdn.com/uploads/chorus_image/image/73726284/2184170008.0.jpg",
       "position": "LB",
       "nationality": "Canada",
       "flag": "https://cdn.sofifa.net/flags/ca.png",
       "club": "Bayern Munich",
       "logo": "https://cdn.sofifa.net/meta/team/503/120.png",
       "rating": 84,
+      "selected": false,
       "stats": {
         "pace": 96,
         "shooting": 68,
@@ -351,6 +368,7 @@
       "club": "Al-Hilal",
       "logo": "https://cdn.sofifa.net/meta/team/7011/120.png",
       "rating": 84,
+      "selected": false,
       "stats": {
         "diving": 81,
         "handling": 82,
@@ -364,13 +382,14 @@
       "id": 19,
       "name": "Bruno Fernandes",
       "photo": "https://cdn.sofifa.net/players/212/198/25_120.png",
-      "large_pic": "https://static.medias24.com/content/uploads/2023/02/09/bounou.png?x42630",
+      "large_pic": "https://tmssl.akamaized.net//images/foto/galerie/bruno-fernandes-portugal-2024-1718210778-139470.jpg?lm=1718210792",
       "position": "CM",
       "nationality": "Portugal",
       "flag": "https://cdn.sofifa.net/flags/pt.png",
       "club": "Manchester United",
       "logo": "https://cdn.sofifa.net/meta/team/14/120.png",
       "rating": 88,
+      "selected": false,
       "stats": {
         "pace": 75,
         "shooting": 85,
@@ -391,6 +410,7 @@
       "club": "Manchester United",
       "logo": "https://cdn.sofifa.net/meta/team/14/120.png",
       "rating": 84,
+      "selected": false,
       "stats": {
         "pace": 85,
         "shooting": 74,
@@ -409,7 +429,9 @@
       "nationality": "England",
       "flag": "https://cdn.sofifa.net/flags/gb-eng.png",
       "club": "Liverpool",
+      "logo": "https://cdn.sofifa.net/meta/team/8/120.png",
       "rating": 87,
+      "selected": false,
       "stats": {
         "pace": 76,
         "shooting": 66,
@@ -430,6 +452,7 @@
       "club": "Paris Saint-Germain",
       "logo": "https://cdn.sofifa.net/meta/team/591/120.png",
       "rating": 84,
+      "selected": false,
       "stats": {
         "pace": 91,
         "shooting": 76,
@@ -443,13 +466,14 @@
       "id": 23,
       "name": "Youssef En-Nesyri",
       "photo": "https://cdn.sofifa.net/players/235/410/25_120.png",
-      "large_pic": "https://www.aljazeera.com/wp-content/uploads/2022/12/2022-12-06T154719Z_1689164237_UP1EIC617UT93_RTRMADP_3_SOCCER-WORLDCUP-MAR-ESP-REPORT.jpg?w=770&resize=770%2C551",
+      "large_pic": "https://tmssl.akamaized.net//images/foto/galerie/youssef-en-nesyri-fenerbahce-1724056989-145443.jpg?lm=1724057011",
       "position": "ST",
       "nationality": "Morocco",
       "flag": "https://cdn.sofifa.net/flags/ma.png",
       "club": "Fenerbahçe",
       "logo": "https://cdn.sofifa.net/meta/team/88/120.png",
       "rating": 83,
+      "selected": false,
       "stats": {
         "pace": 82,
         "shooting": 82,
@@ -470,6 +494,7 @@
       "club": "Manchester United",
       "logo": "https://cdn.sofifa.net/meta/team/14/120.png",
       "rating": 81,
+      "selected": false,
       "stats": {
         "pace": 78,
         "shooting": 66,
@@ -490,6 +515,7 @@
       "club": "PSV",
       "logo": "https://cdn.sofifa.net/meta/team/682/120.png",
       "rating": 83,
+      "selected": false,
       "stats": {
         "pace": 89,
         "shooting": 78,
@@ -510,6 +536,7 @@
       "club": "Paris Saint-Germain",
       "logo": "https://cdn.sofifa.net/meta/team/591/120.png",
       "rating": 89,
+      "selected": false,
       "stats": {
         "diving": 88,
         "handling": 84,
