@@ -31,8 +31,29 @@ window.showPlayerDetails = (player_id) => {
             </div>
             <div class="bg-darkGray w-1/3 h-full max-md:w-full flex flex-col p-4 gap-2 max-md:gap-4 justify-between">
                 <div class="flex flex-col gap-2" id="stats-details">    </div>
-                <div class="h-10 max-md:mt-2 items-center flex justify-end gap-2">
-                    <span class="cursor-pointer">More Option</span>
+                <div class="h-10 max-md:mt-2 items-center flex justify-end gap-2" id="player-option">
+                    <span class="cursor-pointer" onclick="playerOption()">More Option</span>
+                </div>
+            </div>
+
+            <div id="player-option-list" class="absolute flex flex-col justify-between bottom-[-100%] transition-all delay-100 ease-in-out right-0 w-[100%] rounded-md h-[40%] bg-white text-black shadow-[0_0_20px_rgba(0,0,0,0.9)]">
+                <div class="w-full flex justify-between p-4">
+                    <p>Player Options</p>
+                    <span class="cursor-pointer" onclick="closePlayerOption()">X</span>
+                </div>
+                <div class="flex-grow-0 pb-4">
+                    <p class="px-4 cursor-pointer hover:bg-gray-100">
+                        ${player.selected ? "Remove player from team" : ""}
+                    </p>
+                    <p class="px-4 cursor-pointer hover:bg-gray-100" onclick="insertPlayerIntoTeam('${player.id}')">
+                        ${!player.selected ? "Insert player into Team" : ""}
+                    </p>
+                    <p class="px-4 cursor-pointer hover:bg-gray-100">
+                        ${!player.selected ? "Delete Player from players list" : ""}
+                    </p>
+                    <p class="px-4 cursor-pointer hover:bg-gray-100">
+                        ${player.selected ? "Substitute Player" : ""}
+                    </p>
                 </div>
             </div>
         </div>
