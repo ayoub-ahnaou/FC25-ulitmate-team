@@ -19,7 +19,12 @@
         "dribbling": 95,
         "defending": 35,
         "physical": 65
-      }
+      },
+      "card_area": "",
+      "type": "",
+      "add_icons_id": "",
+      "current_position": "",
+      "player_role": ""
     },
     {
       "id": 2,
@@ -40,7 +45,12 @@
         "dribbling": 87,
         "defending": 34,
         "physical": 77
-      }
+      },
+      "card_area": "",
+      "type": "",
+      "add_icons_id": "",
+      "current_position": "",
+      "player_role": ""
     },
     {
       "id": 3,
@@ -61,7 +71,12 @@
         "dribbling": 88,
         "defending": 64,
         "physical": 78
-      }
+      },
+      "card_area": "",
+      "type": "",
+      "add_icons_id": "",
+      "current_position": "",
+      "player_role": ""
     },
     {
       "id": 4,
@@ -82,7 +97,12 @@
         "dribbling": 92,
         "defending": 39,
         "physical": 77
-      }
+      },
+      "card_area": "",
+      "type": "",
+      "add_icons_id": "",
+      "current_position": "",
+      "player_role": ""
     },
     {
       "id": 5,
@@ -103,7 +123,12 @@
         "dribbling": 72,
         "defending": 92,
         "physical": 86
-      }
+      },
+      "card_area": "",
+      "type": "",
+      "add_icons_id": "",
+      "current_position": "",
+      "player_role": ""
     },
     {
       "id": 6,
@@ -124,7 +149,12 @@
         "dribbling": 70,
         "defending": 86,
         "physical": 86
-      }
+      },
+      "card_area": "",
+      "type": "",
+      "add_icons_id": "",
+      "current_position": "",
+      "player_role": ""
     },
     {
       "id": 7,
@@ -145,7 +175,12 @@
         "dribbling": 94,
         "defending": 37,
         "physical": 61
-      }
+      },
+      "card_area": "",
+      "type": "",
+      "add_icons_id": "",
+      "current_position": "",
+      "player_role": ""
     },
     {
       "id": 8,
@@ -166,7 +201,12 @@
         "dribbling": 90,
         "defending": 45,
         "physical": 75
-      }
+      },
+      "card_area": "",
+      "type": "",
+      "add_icons_id": "",
+      "current_position": "",
+      "player_role": ""
     },
     {
       "id": 9,
@@ -187,7 +227,12 @@
         "dribbling": 84,
         "defending": 84,
         "physical": 81
-      }
+      },
+      "card_area": "",
+      "type": "",
+      "add_icons_id": "",
+      "current_position": "",
+      "player_role": ""
     },
     {
       "id": 10,
@@ -208,7 +253,12 @@
         "reflexes": 92,
         "speed": 50,
         "positioning": 88
-      }
+      },
+      "card_area": "",
+      "type": "",
+      "add_icons_id": "",
+      "current_position": "",
+      "player_role": ""
     },
     {
       "id": 11,
@@ -229,7 +279,12 @@
         "dribbling": 90,
         "defending": 72,
         "physical": 65
-      }
+      },
+      "card_area": "",
+      "type": "",
+      "add_icons_id": "",
+      "current_position": "",
+      "player_role": ""
     },
     {
       "id": 12,
@@ -250,7 +305,12 @@
         "dribbling": 94,
         "defending": 39,
         "physical": 61
-      }
+      },
+      "card_area": "",
+      "type": "",
+      "add_icons_id": "",
+      "current_position": "",
+      "player_role": ""
     },
     {
       "id": 13,
@@ -271,7 +331,12 @@
         "dribbling": 85,
         "defending": 31,
         "physical": 56
-      }
+      },
+      "card_area": "",
+      "type": "",
+      "add_icons_id": "",
+      "current_position": "",
+      "player_role": ""
     },
     {
       "id": 14,
@@ -292,7 +357,12 @@
         "dribbling": 88,
         "defending": 40,
         "physical": 78
-      }
+      },
+      "card_area": "",
+      "type": "",
+      "add_icons_id": "",
+      "current_position": "",
+      "player_role": ""
     },
     {
       "id": 15,
@@ -313,7 +383,12 @@
         "dribbling": 80,
         "defending": 45,
         "physical": 88
-      }
+      },
+      "card_area": "",
+      "type": "",
+      "add_icons_id": "",
+      "current_position": "",
+      "player_role": ""
     },
     {
       "id": 16,
@@ -334,7 +409,12 @@
         "dribbling": 82,
         "defending": 88,
         "physical": 82
-      }
+      },
+      "card_area": "",
+      "type": "",
+      "add_icons_id": "",
+      "current_position": "",
+      "player_role": ""
     },
     {
       "id": 17,
@@ -355,7 +435,12 @@
         "dribbling": 82,
         "defending": 76,
         "physical": 77
-      }
+      },
+      "card_area": "",
+      "type": "",
+      "add_icons_id": "",
+      "current_position": "",
+      "player_role": ""
     },
     {
       "id": 18,
@@ -376,7 +461,12 @@
         "reflexes": 86,
         "speed": 38,
         "positioning": 83
-      }
+      },
+      "card_area": "",
+      "type": "",
+      "add_icons_id": "",
+      "current_position": "",
+      "player_role": ""
     },
     {
       "id": 19,
@@ -397,7 +487,12 @@
         "dribbling": 84,
         "defending": 69,
         "physical": 77
-      }
+      },
+      "card_area": "",
+      "type": "",
+      "add_icons_id": "",
+      "current_position": "",
+      "player_role": ""
     },
     {
       "id": 20,
@@ -418,7 +513,12 @@
         "dribbling": 88,
         "defending": 34,
         "physical": 63
-      }
+      },
+      "card_area": "",
+      "type": "",
+      "add_icons_id": "",
+      "current_position": "",
+      "player_role": ""
     },
     {
       "id": 21,
@@ -439,7 +539,12 @@
         "dribbling": 80,
         "defending": 79,
         "physical": 71
-      }
+      },
+      "card_area": "",
+      "type": "",
+      "add_icons_id": "",
+      "current_position": "",
+      "player_role": ""
     },
     {
       "id": 22,
@@ -460,7 +565,12 @@
         "dribbling": 80,
         "defending": 75,
         "physical": 78
-      }
+      },
+      "card_area": "",
+      "type": "",
+      "add_icons_id": "",
+      "current_position": "",
+      "player_role": ""
     },
     {
       "id": 23,
@@ -481,7 +591,12 @@
         "dribbling": 77,
         "defending": 36,
         "physical": 80
-      }
+      },
+      "card_area": "",
+      "type": "",
+      "add_icons_id": "",
+      "current_position": "",
+      "player_role": ""
     },
     {
       "id": 24,
@@ -502,7 +617,12 @@
         "dribbling": 83,
         "defending": 77,
         "physical": 71
-      }
+      },
+      "card_area": "",
+      "type": "",
+      "add_icons_id": "",
+      "current_position": "",
+      "player_role": ""
     },
     {
       "id": 25,
@@ -523,7 +643,12 @@
         "dribbling": 86,
         "defending": 55,
         "physical": 84
-      }
+      },
+      "card_area": "",
+      "type": "",
+      "add_icons_id": "",
+      "current_position": "",
+      "player_role": ""
     },
     {
       "id": 26,
@@ -544,7 +669,12 @@
         "reflexes": 90,
         "speed": 50,
         "positioning": 85
-      }
+      },
+      "card_area": "",
+      "type": "",
+      "add_icons_id": "",
+      "current_position": "",
+      "player_role": ""
     }
   ]
 }
