@@ -246,7 +246,7 @@
             <h1 class="center font-gaMaamli p-4 text-2xl">Create new Player</h1>
 
             <div class="flex flex-col p-4">
-                <div class="flex gap-4 items-end mb-4 max-sm:flex-col">
+                <div class="flex gap-2 items-end mb-4 max-sm:flex-col">
                     <div class="flex flex-col max-sm:w-full gap-2 flex-1">
                         <label for="name" class="text-base">Full Name</label>
                         <input type="text" id="name" class="text-gray-300 bg-black focus:border  outline-none border-none px-3 py-2 rounded-lg" placeholder="eg: Ayoub Ahnaou" autocomplete="off">
@@ -255,10 +255,10 @@
                     <div class="flex items-end max-sm:w-full justify-between">
                         <div class="flex flex-col w-full gap-2">
                             <label for="positions" class="text-base">Position</label>
-                            <select id="positions" class="bg-black outline-none text-gray-300 text-sm rounded-lg border border-transparent focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 pr-0">
+                            <select onchange="handleUpdateStatsValues()" id="positions" class="bg-black outline-none text-gray-300 text-sm rounded-lg border border-transparent focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 pr-0">
                                 <option value="" selected="">Choose a Position</option>
                                 <option value="st">ST</option>
-                                <option value="lx">LW</option>
+                                <option value="lw">LW</option>
                                 <option value="rw">RW</option>
                                 <option value="cm">CM</option>
                                 <option value="cb">CB</option>
@@ -270,8 +270,8 @@
                     </div>
                 </div>
 
-                <div class="flex gap-4 mb-4">
-                    <div class="flex items-end justify-between flex-1 gap-2">
+                <div class="flex gap-2 mb-4">
+                    <div class="flex items-end justify-between flex-1">
                         <div class="flex flex-col flex-1">
                             <label for="clubs" class="block mb-2 text-sm font-medium text-white">Club</label>
                             <select id="clubs" class="bg-black outline-none text-gray-300 text-sm rounded-lg border border-transparent focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 pr-0">
@@ -289,7 +289,7 @@
                         </div>
                     </div>
 
-                    <div class="flex items-end justify-between flex-1 gap-2">
+                    <div class="flex items-end justify-between flex-1">
                         <div class="flex flex-col flex-1">
                             <label for="countries" class="block mb-2 text-sm font-medium text-white">Country</label>
                             <select id="countries" class="bg-black outline-none border border-transparent focus:ring-blue-500 focus:border-blue-500 text-gray-300 text-sm rounded-lg block w-full p-2.5 pr-0">
@@ -309,36 +309,36 @@
                     </div>
                 </div>
 
-                <div class="flex flex-wrap gap-2 text-sm justify-between mb-12" id="stats">
+                <div class="flex flex-wrap gap-1 text-sm justify-between mb-12" id="stats">
                     <div class="flex flex-col flex-1">
                         <label class="mb-1 text-base">PAC</label>
-                        <input type="number" class="text-white bg-black outline-none rounded-lg p-1 text-center" placeholder="0 - 100" min="0" max="100">
+                        <input type="number" class="text-white bg-black outline-none rounded-lg p-1 text-center" placeholder="0 - 100">
                     </div>
                     <div class="flex flex-col flex-1">
                         <label class="mb-1 text-base">SHO</label>
-                        <input type="number" class="text-white bg-black outline-none rounded-lg p-1 text-center" placeholder="0 - 100" min="0" max="100">
+                        <input type="number" class="text-white bg-black outline-none rounded-lg p-1 text-center" placeholder="0 - 100">
                     </div>
                     <div class="flex flex-col flex-1">
                         <label class="mb-1 text-base">PAS</label>
-                        <input type="number" class="text-white bg-black outline-none rounded-lg p-1 text-center" placeholder="0 - 100" min="0" max="100">
+                        <input type="number" class="text-white bg-black outline-none rounded-lg p-1 text-center" placeholder="0 - 100">
                     </div>
                     <div class="flex flex-col flex-1">
                         <label class="mb-1 text-base">DRI</label>
-                        <input type="number" class="text-white bg-black outline-none rounded-lg p-1 text-center" placeholder="0 - 100" min="0" max="100">
+                        <input type="number" class="text-white bg-black outline-none rounded-lg p-1 text-center" placeholder="0 - 100">
                     </div>
                     <div class="flex flex-col flex-1">
                         <label class="mb-1 text-base">DEF</label>
-                        <input type="number" class="text-white bg-black outline-none rounded-lg p-1 text-center" placeholder="0 - 100" min="0" max="100">
+                        <input type="number" class="text-white bg-black outline-none rounded-lg p-1 text-center" placeholder="0 - 100">
                     </div>
                     <div class="flex flex-col flex-1">
                         <label class="mb-1 text-base">PHY</label>
-                        <input type="number" class="text-white bg-black outline-none rounded-lg p-1 text-center" placeholder="0 - 100" min="0" max="100">
+                        <input type="number" class="text-white bg-black outline-none rounded-lg p-1 text-center" placeholder="0 - 100">
                     </div>
                 </div>
 
                 <div class="flex gap-2">
-                    <button class="block mx-auto bg-gray-600 py-1 px-6 text-base rounded-lg">Cancel</button>
-                    <button class="block mx-auto w-full bg-goldColor py-1 px-4 text-base rounded-lg">Create +</button>
+                    <button class="block mx-auto bg-gray-600 py-1 px-6 text-base rounded-lg" onclick="hideFormPopUp()">Cancel</button>
+                    <button class="block mx-auto w-full bg-goldColor py-1 px-4 text-base rounded-lg" onclick="handleCreateNewPlayer()">Create +</button>
                 </div>
 
             </div>

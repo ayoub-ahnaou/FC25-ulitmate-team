@@ -1,3 +1,4 @@
+
 const body = document.querySelector("body");
 import data from "../data/players.json" with { type: "json" };
 import countries from "../data/countries.json" with { type: "json" };
@@ -107,6 +108,10 @@ const bench = []; //JSON.parse(localStorage.getItem("bench")) || []; // array wh
 const team = []; //JSON.parse(localStorage.getItem("team")) || []; // variable contains all players starters and bench
 
 const cancelBtn = document.getElementById("cancel-btn");
+const toast_notif = document.getElementById("toast-notif");
+const toastWarning = document.getElementById("toast-warning");
+const toast_succes = document.getElementById("toast-succes");
+const toast_error = document.getElementById("toast-error");
 
 // function to add a player from the list players to the TEAM
 window.addPlayerToTeam = (current_position, player_position_in_stadium, player_role, bench_or_starter, add_icons_id) => {
@@ -127,7 +132,6 @@ window.addPlayerToTeam = (current_position, player_position_in_stadium, player_r
     const card_player_area = document.getElementById(player_position_in_stadium);
 
     // Style for toast notification
-    const toast_notif = document.getElementById("toast-notif");
     toast_notif.textContent = "You can add a player from the players list";
     toast_notif.style.right = "1%";
     setTimeout(() => {
@@ -197,7 +201,7 @@ function updateListPlayers(array) {
     array.map((player) => {
         playersList.innerHTML += `
             <div onclick="appendPlayerToTeam('${player.id}')" class="h-12 max-md:h-10 w-full p-1 hover:bg-darkGray transition-all delay-150 ease-in-out cursor-pointer flex gap-4 items-center">
-                <img class="h-full" src=${player.photo} alt=${player.name}>
+                <img class="h-full" src=${player.photo} alt="${player.name}">
                 <div class="flex flex-col h-full text-[10px] justify-center">
                     <span>${player.name}</span>
                     <span class="text-goldColor">${player.position}</span>
@@ -229,7 +233,6 @@ window.insertPlayerIntoTeam = (player_id) => {
     const player = players[player_id - 1];
     closeDetailsPopUpPlayer();
 
-    const toastWarning = document.getElementById("toast-warning");
     toastWarning.textContent = "You have to choose the position first, then select the player you want to insert";
     toastWarning.style.right = "1%";
 
@@ -254,7 +257,6 @@ window.removePlayerFromTeam = (player_id) => {
         </div>
     `;
     
-    const toast_succes = document.getElementById("toast-succes");
     toast_succes.textContent = `Player removed succsefully from ${player.bench_or_starter}`;
     toast_succes.style.right = "1%";
     setTimeout(() => {
@@ -655,49 +657,143 @@ window.handleUpdateStatsValues = () => {
         Array.from(stats_Dom_values).map((item, index) => item.children[0].textContent = normalPlayersStats[index]);
 
 }
+
 // function to handle creating new player
 window.handleCreateNewPlayer = () => {
     // get all inputs values from the form
     const name = document.getElementById("name").value;
-    const position = document.getElementById("positions").value;
+    const position = document.getElementById("positions").value.toUpperCase();
     const club = document.getElementById("clubs").value;
     const country = document.getElementById("countries").value;
 
+    const stats = affectStrengthStats(position);
     
-    let stats = {};
-    // handle if the player position different of goalkepeer
-    if(position === "GK" || position === "gk"){
-        stats = {
-            diving: 88,
-            handling: 84,
-            kicking: 75,
-            reflexes: 90,
-            speed: 50,
-            positioning: 85
-        }
-    }
-    else {
-        stats = {
-            pace: 88,
-            shooting: 84,
-            passing: 75,
-            dribbling: 90,
-            defending: 50,
-            physical: 85
-        }
-    }
-
     const player = {
         id: players.length + 1,
         name: name,
-        photo: "../assets/images/stadium/unknow-player.png",
-        large_pic: "../assets/images/stadium/unknow-player.png",
+        photo: "../assets/images/stadium/unknown-player.png",
+        large_pic: "../assets/images/stadium/unknown-player.png",
         position: position,
         nationality: country,
         club: club,
         rating: 99,
         salacted: false,
         stats: stats,
+    };
+
+    affectCountryFlag(country, player);
+    affectClubLogo(club, player);
+
+    const isDataValid = validateData(player);
+    if(isDataValid != 1){
+        toast_error.textContent = isDataValid;
+        toast_error.style.right = "1%";
+        setTimeout(() => {
+            toast_error.style.right = "-100%";
+        }, 2500);
+    }
+    else {
+        toast_succes.textContent = "Player added succesfully.";
+        toast_succes.style.right = "1%";
+        setTimeout(() => {
+            toast_succes.style.right = "-100%";
+        }, 2500);
+
+        // push the new player to players list then show the new players updated
+        players.push(player);
+        
+        const playersList = document.getElementById("players-list");
+        playersList.innerHTML = "";
+        players.map((player) => {
+            playersList.innerHTML += `
+                <div onclick="showPlayerDetails('${player.id}')" class="h-12 max-md:h-10 w-full p-1 hover:bg-darkGray transition-all delay-150 ease-in-out cursor-pointer flex gap-4 items-center">
+                    <img class="h-full" src=${player.photo} alt="${player.name}">
+                    <div class="flex flex-col h-full text-[10px] justify-center">
+                        <span>${player.name}</span>
+                        <span class="text-goldColor">${player.position}</span>
+                    </div>
+                    <div class="flex-1 h-full flex items-center gap-2 justify-end">
+                        <img src=${player.logo} class="h-1/2" alt="">
+                        <img src=${player.flag} class="h-1/2" alt="">
+                        <span class="text-goldColor text-lg">${player.rating}</span>
+                    </div>
+                </div>
+            `;
+        });
+
+        hideFormPopUp();
+    }
+
+}
+
+function validateData(player) {
+    const nameRegex = /^[^:;?!@&#$<>&'"-_=+²1234567890%*µ]+$/; // regex for special character
+    const emptyRegex = /^\s*$/; // regex for empty values
+
+    if (emptyRegex.test(player.name)) return "Please fill the name field.";
+    if (!nameRegex.test(player.name.toLowerCase())) return "Please do not use a special characters or numbers.";
+    if (emptyRegex.test(player.position)) return "Please select the player position.";
+    if (emptyRegex.test(player.club)) return "Please select a club.";
+    if (emptyRegex.test(player.nationality)) return "Please select a country.";
+
+    const stats_Dom_values = document.getElementById("stats").children;
+
+    const array_of_stats = Array.from(stats_Dom_values);
+    for(let i=0; i<6; i++){
+        if(array_of_stats[i].children[1].value == "")
+            return "Please fill the "+ array_of_stats[i].children[0].textContent.toLocaleLowerCase() +" strentgh field.";
+        if(array_of_stats[i].children[1].value > 100 || array_of_stats[i].children[1].value < 0)
+            return "Strength value in "+ array_of_stats[i].children[0].textContent.toLocaleLowerCase() +" must be between 0 and 100."
+    }
+
+    return 1;
+}
+
+function affectStrengthStats(position) {
+    const stats_Dom_values = document.getElementById("stats").children;
+    const array_of_stats = Array.from(stats_Dom_values);
+    
+    let stats = {};
+    // handle if the player position different of goalkepeer
+    if(position === "GK" || position === "gk"){
+        stats = {
+            diving: array_of_stats[0].children[1].value,
+            handling: array_of_stats[1].children[1].value,
+            kicking: array_of_stats[2].children[1].value,
+            reflexes: array_of_stats[3].children[1].value,
+            speed: array_of_stats[4].children[1].value,
+            positioning: array_of_stats[5].children[1].value
+        }
+    }
+    else {
+        stats = {
+            pace: array_of_stats[0].children[1].value,
+            shooting: array_of_stats[1].children[1].value,
+            passing: array_of_stats[2].children[1].value,
+            dribbling: array_of_stats[3].children[1].value,
+            defending: array_of_stats[4].children[1].value,
+            physical: array_of_stats[5].children[1].value
+        }
+    }
+
+    return stats;
+}
+function affectCountryFlag(country, player) {
+    countries.map((element) => {
+        if(country == element.country){
+            player.flag = element.flag;
+            return;
+        }
+    })
+}
+function affectClubLogo(club, player) {
+    clubs.map((element) => {
+        if(club == element.club){
+            player.logo = element.logo;
+            return;
+        }
+    })
+=======
     }
 
     let isDataValid = validateData(player);
