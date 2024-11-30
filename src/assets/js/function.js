@@ -108,6 +108,10 @@ const bench = []; //JSON.parse(localStorage.getItem("bench")) || []; // array wh
 const team = []; //JSON.parse(localStorage.getItem("team")) || []; // variable contains all players starters and bench
 
 const cancelBtn = document.getElementById("cancel-btn");
+const toast_notif = document.getElementById("toast-notif");
+const toastWarning = document.getElementById("toast-warning");
+const toast_succes = document.getElementById("toast-succes");
+const toast_error = document.getElementById("toast-error");
 
 // function to add a player from the list players to the TEAM
 window.addPlayerToTeam = (current_position, player_position_in_stadium, player_role, bench_or_starter, add_icons_id) => {
@@ -128,7 +132,6 @@ window.addPlayerToTeam = (current_position, player_position_in_stadium, player_r
     const card_player_area = document.getElementById(player_position_in_stadium);
 
     // Style for toast notification
-    const toast_notif = document.getElementById("toast-notif");
     toast_notif.textContent = "You can add a player from the players list";
     toast_notif.style.right = "1%";
     setTimeout(() => {
@@ -230,7 +233,6 @@ window.insertPlayerIntoTeam = (player_id) => {
     const player = players[player_id - 1];
     closeDetailsPopUpPlayer();
 
-    const toastWarning = document.getElementById("toast-warning");
     toastWarning.textContent = "You have to choose the position first, then select the player you want to insert";
     toastWarning.style.right = "1%";
 
@@ -255,7 +257,6 @@ window.removePlayerFromTeam = (player_id) => {
         </div>
     `;
     
-    const toast_succes = document.getElementById("toast-succes");
     toast_succes.textContent = `Player removed succsefully from ${player.bench_or_starter}`;
     toast_succes.style.right = "1%";
     setTimeout(() => {
@@ -658,11 +659,11 @@ window.handleUpdateStatsValues = () => {
 }
 
 function validateData(player) {
-    const nameRegex = /^[^:;?!@&#$<>&'"]+$/; // regex for special character
+    const nameRegex = /^[^:;?!@&#$<>&'"-_=+²1234567890%*µ]+$/; // regex for special character
     const emptyRegex = /^\s*$/; // regex for empty values
 
     if (emptyRegex.test(player.name)) return "Please fill the name field.";
-    if (!nameRegex.test(player.name)) return "Please do not use a special charactere.";
+    if (!nameRegex.test(player.name)) return "Please do not use a special characters or numbers.";
     if (emptyRegex.test(player.position)) return "Please select the player position.";
     if (emptyRegex.test(player.club)) return "Please select a club.";
     if (emptyRegex.test(player.nationality)) return "Please select a country.";
