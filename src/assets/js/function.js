@@ -568,5 +568,33 @@ window.switchPlayer = (player_in_id, player_out_id, players_array) => {
         }
     });
 
+    switchDomValues(player_in.id, player_out.id);
     cancelBtn.classList.add("hidden");
+}
+
+// function to cancel substitution
+window.cancelSubstitution = () => {}
+
+const switchDomValues = (player_in_id, player_out_id) => {
+    const player_out = players[player_out_id - 1];
+    const player_in = players[player_in_id - 1];
+    const tmp_player = {};
+
+    tmp_player.add_icons_id = player_in.add_icons_id;
+    tmp_player.bench_or_starter = player_in.bench_or_starter;
+    tmp_player.current_position = player_in.current_position;
+    tmp_player.player_position_in_stadium = player_in.player_position_in_stadium;
+    tmp_player.player_role = player_in.player_role;
+
+    player_in.add_icons_id = player_out.add_icons_id;
+    player_in.bench_or_starter = player_out.bench_or_starter;
+    player_in.current_position = player_out.current_position;
+    player_in.player_position_in_stadium = player_out.player_position_in_stadium;
+    player_in.player_role = player_out.player_role;
+
+    player_out.add_icons_id = tmp_player.add_icons_id;
+    player_out.bench_or_starter = tmp_player.bench_or_starter;
+    player_out.current_position = tmp_player.current_position;
+    player_out.player_position_in_stadium = tmp_player.player_position_in_stadium;
+    player_out.player_role = tmp_player.player_role;
 }
