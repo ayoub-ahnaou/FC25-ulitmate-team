@@ -20,11 +20,11 @@
         "defending": 35,
         "physical": 65
       },
-      "card_area": "",
-      "type": "",
+      "bench_or_starter": "",
+      "player_position_in_stadium": "",
       "add_icons_id": "",
-      "current_position": "",
-      "player_role": ""
+      "player_role": "",
+      "current_position": ""
     },
     {
       "id": 2,
@@ -46,11 +46,11 @@
         "defending": 34,
         "physical": 77
       },
-      "card_area": "",
-      "type": "",
+      "bench_or_starter": "",
+      "player_position_in_stadium": "",
       "add_icons_id": "",
-      "current_position": "",
-      "player_role": ""
+      "player_role": "",
+      "current_position": ""
     },
     {
       "id": 3,
@@ -72,11 +72,11 @@
         "defending": 64,
         "physical": 78
       },
-      "card_area": "",
-      "type": "",
+      "bench_or_starter": "",
+      "player_position_in_stadium": "",
       "add_icons_id": "",
-      "current_position": "",
-      "player_role": ""
+      "player_role": "",
+      "current_position": ""
     },
     {
       "id": 4,
@@ -98,11 +98,11 @@
         "defending": 39,
         "physical": 77
       },
-      "card_area": "",
-      "type": "",
+      "bench_or_starter": "",
+      "player_position_in_stadium": "",
       "add_icons_id": "",
-      "current_position": "",
-      "player_role": ""
+      "player_role": "",
+      "current_position": ""
     },
     {
       "id": 5,
@@ -124,11 +124,11 @@
         "defending": 92,
         "physical": 86
       },
-      "card_area": "",
-      "type": "",
+      "bench_or_starter": "",
+      "player_position_in_stadium": "",
       "add_icons_id": "",
-      "current_position": "",
-      "player_role": ""
+      "player_role": "",
+      "current_position": ""
     },
     {
       "id": 6,
@@ -150,11 +150,11 @@
         "defending": 86,
         "physical": 86
       },
-      "card_area": "",
-      "type": "",
+      "bench_or_starter": "",
+      "player_position_in_stadium": "",
       "add_icons_id": "",
-      "current_position": "",
-      "player_role": ""
+      "player_role": "",
+      "current_position": ""
     },
     {
       "id": 7,
@@ -176,11 +176,11 @@
         "defending": 37,
         "physical": 61
       },
-      "card_area": "",
-      "type": "",
+      "bench_or_starter": "",
+      "player_position_in_stadium": "",
       "add_icons_id": "",
-      "current_position": "",
-      "player_role": ""
+      "player_role": "",
+      "current_position": ""
     },
     {
       "id": 8,
@@ -202,11 +202,11 @@
         "defending": 45,
         "physical": 75
       },
-      "card_area": "",
-      "type": "",
+      "bench_or_starter": "",
+      "player_position_in_stadium": "",
       "add_icons_id": "",
-      "current_position": "",
-      "player_role": ""
+      "player_role": "",
+      "current_position": ""
     },
     {
       "id": 9,
@@ -228,11 +228,11 @@
         "defending": 84,
         "physical": 81
       },
-      "card_area": "",
-      "type": "",
+      "bench_or_starter": "",
+      "player_position_in_stadium": "",
       "add_icons_id": "",
-      "current_position": "",
-      "player_role": ""
+      "player_role": "",
+      "current_position": ""
     },
     {
       "id": 10,
@@ -254,11 +254,11 @@
         "speed": 50,
         "positioning": 88
       },
-      "card_area": "",
-      "type": "",
+      "bench_or_starter": "",
+      "player_position_in_stadium": "",
       "add_icons_id": "",
-      "current_position": "",
-      "player_role": ""
+      "player_role": "",
+      "current_position": ""
     },
     {
       "id": 11,
@@ -280,11 +280,11 @@
         "defending": 72,
         "physical": 65
       },
-      "card_area": "",
-      "type": "",
+      "bench_or_starter": "",
+      "player_position_in_stadium": "",
       "add_icons_id": "",
-      "current_position": "",
-      "player_role": ""
+      "player_role": "",
+      "current_position": ""
     },
     {
       "id": 12,
@@ -306,11 +306,11 @@
         "defending": 39,
         "physical": 61
       },
-      "card_area": "",
-      "type": "",
+      "bench_or_starter": "",
+      "player_position_in_stadium": "",
       "add_icons_id": "",
-      "current_position": "",
-      "player_role": ""
+      "player_role": "",
+      "current_position": ""
     },
     {
       "id": 13,
@@ -332,11 +332,11 @@
         "defending": 31,
         "physical": 56
       },
-      "card_area": "",
-      "type": "",
+      "bench_or_starter": "",
+      "player_position_in_stadium": "",
       "add_icons_id": "",
-      "current_position": "",
-      "player_role": ""
+      "player_role": "",
+      "current_position": ""
     },
     {
       "id": 14,
@@ -358,11 +358,11 @@
         "defending": 40,
         "physical": 78
       },
-      "card_area": "",
-      "type": "",
+      "bench_or_starter": "",
+      "player_position_in_stadium": "",
       "add_icons_id": "",
-      "current_position": "",
-      "player_role": ""
+      "player_role": "",
+      "current_position": ""
     },
     {
       "id": 15,
@@ -384,11 +384,11 @@
         "defending": 45,
         "physical": 88
       },
-      "card_area": "",
-      "type": "",
+      "bench_or_starter": "",
+      "player_position_in_stadium": "",
       "add_icons_id": "",
-      "current_position": "",
-      "player_role": ""
+      "player_role": "",
+      "current_position": ""
     },
     {
       "id": 16,
@@ -410,11 +410,11 @@
         "defending": 88,
         "physical": 82
       },
-      "card_area": "",
-      "type": "",
+      "bench_or_starter": "",
+      "player_position_in_stadium": "",
       "add_icons_id": "",
-      "current_position": "",
-      "player_role": ""
+      "player_role": "",
+      "current_position": ""
     },
     {
       "id": 17,
@@ -436,11 +436,11 @@
         "defending": 76,
         "physical": 77
       },
-      "card_area": "",
-      "type": "",
+      "bench_or_starter": "",
+      "player_position_in_stadium": "",
       "add_icons_id": "",
-      "current_position": "",
-      "player_role": ""
+      "player_role": "",
+      "current_position": ""
     },
     {
       "id": 18,
@@ -462,11 +462,11 @@
         "speed": 38,
         "positioning": 83
       },
-      "card_area": "",
-      "type": "",
+      "bench_or_starter": "",
+      "player_position_in_stadium": "",
       "add_icons_id": "",
-      "current_position": "",
-      "player_role": ""
+      "player_role": "",
+      "current_position": ""
     },
     {
       "id": 19,
@@ -488,11 +488,11 @@
         "defending": 69,
         "physical": 77
       },
-      "card_area": "",
-      "type": "",
+      "bench_or_starter": "",
+      "player_position_in_stadium": "",
       "add_icons_id": "",
-      "current_position": "",
-      "player_role": ""
+      "player_role": "",
+      "current_position": ""
     },
     {
       "id": 20,
@@ -514,11 +514,11 @@
         "defending": 34,
         "physical": 63
       },
-      "card_area": "",
-      "type": "",
+      "bench_or_starter": "",
+      "player_position_in_stadium": "",
       "add_icons_id": "",
-      "current_position": "",
-      "player_role": ""
+      "player_role": "",
+      "current_position": ""
     },
     {
       "id": 21,
@@ -540,11 +540,11 @@
         "defending": 79,
         "physical": 71
       },
-      "card_area": "",
-      "type": "",
+      "bench_or_starter": "",
+      "player_position_in_stadium": "",
       "add_icons_id": "",
-      "current_position": "",
-      "player_role": ""
+      "player_role": "",
+      "current_position": ""
     },
     {
       "id": 22,
@@ -566,11 +566,11 @@
         "defending": 75,
         "physical": 78
       },
-      "card_area": "",
-      "type": "",
+      "bench_or_starter": "",
+      "player_position_in_stadium": "",
       "add_icons_id": "",
-      "current_position": "",
-      "player_role": ""
+      "player_role": "",
+      "current_position": ""
     },
     {
       "id": 23,
@@ -592,11 +592,11 @@
         "defending": 36,
         "physical": 80
       },
-      "card_area": "",
-      "type": "",
+      "bench_or_starter": "",
+      "player_position_in_stadium": "",
       "add_icons_id": "",
-      "current_position": "",
-      "player_role": ""
+      "player_role": "",
+      "current_position": ""
     },
     {
       "id": 24,
@@ -618,11 +618,11 @@
         "defending": 77,
         "physical": 71
       },
-      "card_area": "",
-      "type": "",
+      "bench_or_starter": "",
+      "player_position_in_stadium": "",
       "add_icons_id": "",
-      "current_position": "",
-      "player_role": ""
+      "player_role": "",
+      "current_position": ""
     },
     {
       "id": 25,
@@ -644,11 +644,11 @@
         "defending": 55,
         "physical": 84
       },
-      "card_area": "",
-      "type": "",
+      "bench_or_starter": "",
+      "player_position_in_stadium": "",
       "add_icons_id": "",
-      "current_position": "",
-      "player_role": ""
+      "player_role": "",
+      "current_position": ""
     },
     {
       "id": 26,
@@ -670,11 +670,11 @@
         "speed": 50,
         "positioning": 85
       },
-      "card_area": "",
-      "type": "",
+      "bench_or_starter": "",
+      "player_position_in_stadium": "",
       "add_icons_id": "",
-      "current_position": "",
-      "player_role": ""
+      "player_role": "",
+      "current_position": ""
     }
   ]
 }
