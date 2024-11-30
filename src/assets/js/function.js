@@ -666,28 +666,7 @@ window.handleCreateNewPlayer = () => {
     const club = document.getElementById("clubs").value;
     const country = document.getElementById("countries").value;
 
-    let stats = {};
-    // handle if the player position different of goalkepeer
-    if(position === "GK" || position === "gk"){
-        stats = {
-            diving: 88,
-            handling: 84,
-            kicking: 75,
-            reflexes: 90,
-            speed: 50,
-            positioning: 85
-        }
-    }
-    else {
-        stats = {
-            pace: 88,
-            shooting: 84,
-            passing: 75,
-            dribbling: 90,
-            defending: 50,
-            physical: 85
-        }
-    }
+    const stats = affectStrengthStats(position);
 
     const player = {
         id: players.length + 1,
@@ -765,4 +744,34 @@ function validateData(player) {
     }
 
     return 1;
+}
+
+function affectStrengthStats(position) {
+    const stats_Dom_values = document.getElementById("stats").children;
+    const array_of_stats = Array.from(stats_Dom_values);
+    
+    let stats = {};
+    // handle if the player position different of goalkepeer
+    if(position === "GK" || position === "gk"){
+        stats = {
+            diving: array_of_stats[0].children[1].value,
+            handling: array_of_stats[1].children[1].value,
+            kicking: array_of_stats[2].children[1].value,
+            reflexes: array_of_stats[3].children[1].value,
+            speed: array_of_stats[4].children[1].value,
+            positioning: array_of_stats[5].children[1].value
+        }
+    }
+    else {
+        stats = {
+            pace: array_of_stats[0].children[1].value,
+            shooting: array_of_stats[1].children[1].value,
+            passing: array_of_stats[2].children[1].value,
+            dribbling: array_of_stats[3].children[1].value,
+            defending: array_of_stats[4].children[1].value,
+            physical: array_of_stats[5].children[1].value
+        }
+    }
+
+    return stats;
 }
