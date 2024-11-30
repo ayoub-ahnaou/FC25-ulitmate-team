@@ -656,3 +656,16 @@ window.handleUpdateStatsValues = () => {
         Array.from(stats_Dom_values).map((item, index) => item.children[0].textContent = normalPlayersStats[index]);
 
 }
+
+function validateData(player) {
+    const nameRegex = /^[^:;?!@&#$<>&'"]+$/; // regex for special character
+    const emptyRegex = /^\s*$/; // regex for empty values
+
+    if (emptyRegex.test(player.name)) return "Please fill the name field.";
+    if (!nameRegex.test(player.name)) return "Please do not use a special charactere.";
+    if (emptyRegex.test(player.position)) return "Please select the player position.";
+    if (emptyRegex.test(player.club)) return "Please select a club.";
+    if (emptyRegex.test(player.nationality)) return "Please select a country.";
+
+    return 1;
+}
