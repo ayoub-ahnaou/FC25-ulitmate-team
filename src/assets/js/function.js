@@ -1,10 +1,12 @@
 const body = document.querySelector("body");
 import data from "../data/players.json" with { type: "json" };
+import countries from "../data/countries.json" with { type: "json" };
+import clubs from "../data/clubs.json" with { type: "json" };
 const players = data.players;
 
-setTimeout(() => {
+// setTimeout(() => {
     document.querySelector(".loader").style.display = "none";
-}, 2500);
+// }, 2500);
 
 const background = document.querySelector(".background");
 const playerDetailsContainer = document.getElementById("player-details-container");
@@ -611,4 +613,117 @@ const switchDomValues = (player_in_id, player_out_id) => {
     player_out.current_position = tmp_player.current_position;
     player_out.player_position_in_stadium = tmp_player.player_position_in_stadium;
     player_out.player_role = tmp_player.player_role;
+}
+
+const add_player_icon = document.getElementById("add-player-icon");
+// handle showing the pop-up form after clicking the add new player icon
+add_player_icon.onclick = () => {
+    document.getElementById("add-player-form").classList.remove("hidden");
+    document.getElementById("add-player-form").classList.add("absolute");
+    body.classList.add("my-body-noscroll-class");
+    background.classList.add("blur");
+}
+
+// handle closing form pop-up by clicking outside of it
+document.addEventListener("click", (e) => {
+    if(e.target.id == "add-player-form"){
+        document.getElementById("add-player-form").classList.add("hidden");
+        document.getElementById("add-player-form").classList.remove("absolute");
+
+        closeDetailsPopUpPlayer();
+    }
+});
+
+// handle close the form pop-up
+window.hideFormPopUp = () => {
+    document.getElementById("add-player-form").classList.add("hidden");
+    document.getElementById("add-player-form").classList.remove("absolute");
+
+    closeDetailsPopUpPlayer();
+}
+
+// handle update stats values if user select a goalkepeer
+window.handleUpdateStatsValues = () => {
+    const position = document.getElementById("positions").value;
+    const goalkepeerStats = ["DIV", "HAN", "KIC", "REF", "SPE", "POS"];
+    const normalPlayersStats = ["PAC", "SHO", "PAS", "DRI", "DEF", "PHY"];
+
+    const stats_Dom_values = document.getElementById("stats").children;
+    if(position === "gk")
+        Array.from(stats_Dom_values).map((item, index) => item.children[0].textContent = goalkepeerStats[index]);
+    else 
+        Array.from(stats_Dom_values).map((item, index) => item.children[0].textContent = normalPlayersStats[index]);
+
+}
+// function to handle creating new player
+window.handleCreateNewPlayer = () => {
+    // get all inputs values from the form
+    const name = document.getElementById("name").value;
+    const position = document.getElementById("positions").value;
+    const club = document.getElementById("clubs").value;
+    const country = document.getElementById("countries").value;
+
+    
+    let stats = {};
+    // handle if the player position different of goalkepeer
+    if(position === "GK" || position === "gk"){
+        stats = {
+            diving: 88,
+            handling: 84,
+            kicking: 75,
+            reflexes: 90,
+            speed: 50,
+            positioning: 85
+        }
+    }
+    else {
+        stats = {
+            pace: 88,
+            shooting: 84,
+            passing: 75,
+            dribbling: 90,
+            defending: 50,
+            physical: 85
+        }
+    }
+
+    const player = {
+        id: players.length + 1,
+        name: name,
+        photo: "../assets/images/stadium/unknow-player.png",
+        large_pic: "../assets/images/stadium/unknow-player.png",
+        position: position,
+        nationality: country,
+        club: club,
+        rating: 99,
+        salacted: false,
+        stats: stats,
+    }
+
+    let isDataValid = validateData(player);
+    console.log(isDataValid);
+}
+
+function validateData(playerData) {
+    const nameRegex = /^[^:;?!@&#$<>&'"]+$/;
+
+    const emptyRegex = /^\s*$/;
+
+    let isExist = players.find(player => player.name.toLocaleLowerCase() === playerData.name.toLocaleLowerCase());
+
+    if (isExist) return "Player name is already exist.";
+
+    if (emptyRegex.test(playerData.name)) return "Please fill the name field.";
+
+    if (!nameRegex.test(playerData.name)) return "Invalid characters in the name field.";
+    
+    if (emptyRegex.test(playerData.position)) return "Please select the player position.";
+
+    if (emptyRegex.test(playerData.club)) return "Please select a club.";
+
+    if (emptyRegex.test(playerData.nationality)) return "Please select a country.";
+
+    if (isNaN(playerData.rating)) return "Please fill the player stats.";
+
+    return 1;
 }
