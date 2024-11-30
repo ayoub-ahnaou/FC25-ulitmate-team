@@ -23,7 +23,7 @@
             </div>
         </nav>
 
-        <div class="flex-grow-0 flex max-md:flex-col gap-4 p-4">
+        <div class="flex-grow flex max-md:flex-col gap-4 p-4">
             <div class="w-2/3 max-md:w-full flex-col relative">
                 <div class="h-28 max-md:h-20 w-full flex gap-4 px-8 max-md:px-0 py-4 bg-black">
                     <img src="../assets/images/codm-team.png" class="h-full" alt="">
@@ -45,21 +45,21 @@
                         <div class="h-1/4 flex justify-around mx-32 max-sm:mx-10 " id="attackers">
                             <div class="h-full relative img-shadow-effect" id="leftWinger">
                                 <img src="../assets/images/stadium/card-normal.webp" class="h-full" alt="">
-                                <div class="absolute top-0 bottom-0 w-full center flex-col gap-2" id="lw-add-icon">
+                                <div class="add-icon absolute top-0 bottom-0 w-full center flex-col gap-2" id="lw-add-icon">
                                     <img onclick="addPlayerToTeam('LW', 'leftWinger', 'attackers', 'starter', 'lw-add-icon')" src="../assets/images/icons/plus-square.svg" class="h-10 cursor-pointer" alt="">
                                     <span class="text-darkGray">LW</span>
                                 </div>
                             </div>
                             <div class="h-full relative img-shadow-effect" id="striker">
                                 <img src="../assets/images/stadium/card-normal.webp" class="h-full" alt="">
-                                <div class="absolute top-0 bottom-0 w-full center flex-col gap-2" id="st-add-icon">
+                                <div class="add-icon absolute top-0 bottom-0 w-full center flex-col gap-2" id="st-add-icon">
                                     <img onclick="addPlayerToTeam('ST', 'striker', 'attackers', 'starter', 'st-add-icon')" src="../assets/images/icons/plus-square.svg" class="h-10 cursor-pointer" alt="">
                                     <span class="text-darkGray">ST</span>
                                 </div>
                             </div>
                             <div class="h-full relative img-shadow-effect" id="rightWinger">
                                 <img src="../assets/images/stadium/card-normal.webp" class="h-full" alt="">
-                                <div class="absolute top-0 bottom-0 w-full center flex-col gap-2" id="rw-add-icon">
+                                <div class="add-icon absolute top-0 bottom-0 w-full center flex-col gap-2" id="rw-add-icon">
                                     <img onclick="addPlayerToTeam('RW', 'rightWinger', 'attackers', 'starter', 'rw-add-icon')" src="../assets/images/icons/plus-square.svg" class="h-10 cursor-pointer" alt="">
                                     <span class="text-darkGray">RW</span>
                                 </div>
@@ -68,21 +68,21 @@
                         <div class="h-1/4 flex justify-around mx-56 max-lg:mx-32 max-md:mx-24 " id="midfielders">
                             <div class="h-full relative img-shadow-effect" id="centralLeftMidfielder">
                                 <img src="../assets/images/stadium/card-normal.webp" class="h-full" alt="">
-                                <div class="absolute  top-0 bottom-0 w-full center flex-col gap-2"  id="clm-add-icon">
+                                <div class="add-icon absolute  top-0 bottom-0 w-full center flex-col gap-2"  id="clm-add-icon">
                                     <img onclick="addPlayerToTeam('CM', 'centralLeftMidfielder', 'midfielders', 'starter', 'clm-add-icon')" src="../assets/images/icons/plus-square.svg" class="h-10 cursor-pointer" alt="">
                                     <span class="text-darkGray">CM</span>
                                 </div>
                             </div>
                             <div class="h-full relative img-shadow-effect" id="centralMidfielder">
                                 <img src="../assets/images/stadium/card-normal.webp" class="h-full" alt="">
-                                <div class="absolute top-0 bottom-0 w-full center flex-col gap-2" id="cm-add-icon">
+                                <div class="add-icon absolute top-0 bottom-0 w-full center flex-col gap-2" id="cm-add-icon">
                                     <img onclick="addPlayerToTeam('CM', 'centralMidfielder', 'midfielders', 'starter', 'cm-add-icon')" src="../assets/images/icons/plus-square.svg" class="h-10 cursor-pointer" alt="">
                                     <span class="text-darkGray">CM</span>
                                 </div>
                             </div>
                             <div class="h-full relative img-shadow-effect" id="centralRightMidfielder">
                                 <img src="../assets/images/stadium/card-normal.webp" class="h-full" alt="">
-                                <div class="absolute top-0 bottom-0 w-full center flex-col gap-2"  id="crm-add-icon">
+                                <div class="add-icon absolute top-0 bottom-0 w-full center flex-col gap-2"  id="crm-add-icon">
                                     <img onclick="addPlayerToTeam('CM', 'centralRightMidfielder', 'midfielders', 'starter', 'crm-add-icon')" src="../assets/images/icons/plus-square.svg" class="h-10 cursor-pointer" alt="">
                                     <span class="text-darkGray">CM</span>
                                 </div>
@@ -91,28 +91,28 @@
                         <div class="h-1/4 flex justify-around mx-36 max-lg:mx-16 " id="deffenders">
                             <div class="h-full relative img-shadow-effect" id="leftBack">
                                 <img src="../assets/images/stadium/card-normal.webp" class="h-full" alt="">
-                                <div class="absolute top-0 bottom-0 w-full center flex-col gap-2" id="lb-add-icon">
+                                <div class="add-icon absolute top-0 bottom-0 w-full center flex-col gap-2" id="lb-add-icon">
                                     <img onclick="addPlayerToTeam('LB', 'leftBack', 'deffenders', 'starter', 'lb-add-icon')" src="../assets/images/icons/plus-square.svg" class="h-10 cursor-pointer" alt="">
                                     <span class="text-darkGray">LB</span>
                                 </div>
                             </div>
                             <div class="h-full relative img-shadow-effect" id="centreLeftBack">
                                 <img src="../assets/images/stadium/card-normal.webp" class="h-full" alt="">
-                                <div class="absolute top-0 bottom-0 w-full center flex-col gap-2" id="clb-add-icon">
+                                <div class="add-icon absolute top-0 bottom-0 w-full center flex-col gap-2" id="clb-add-icon">
                                     <img onclick="addPlayerToTeam('CB', 'centreLeftBack', 'deffenders', 'starter', 'clb-add-icon')" src="../assets/images/icons/plus-square.svg" class="h-10 cursor-pointer" alt="">
                                     <span class="text-darkGray">CB</span>
                                 </div>
                             </div>
                             <div class="h-full relative img-shadow-effect" id="centreRightBack">
                                 <img src="../assets/images/stadium/card-normal.webp" class="h-full" alt="">
-                                <div class="absolute top-0 bottom-0 w-full center flex-col gap-2" id="crb-add-icon">
+                                <div class="add-icon absolute top-0 bottom-0 w-full center flex-col gap-2" id="crb-add-icon">
                                     <img onclick="addPlayerToTeam('CB', 'centreRightBack', 'deffenders', 'starter', 'crb-add-icon')" src="../assets/images/icons/plus-square.svg" class="h-10 cursor-pointer" alt="">
                                     <span class="text-darkGray">CB</span>
                                 </div>
                             </div>
                             <div class="h-full relative img-shadow-effect" id="rightBack">
                                 <img src="../assets/images/stadium/card-normal.webp" class="h-full" alt="">
-                                <div class="absolute top-0 bottom-0 w-full center flex-col gap-2" id="rb-add-icon">
+                                <div class="add-icon absolute top-0 bottom-0 w-full center flex-col gap-2" id="rb-add-icon">
                                     <img onclick="addPlayerToTeam('RB', 'rightBack', 'deffenders', 'starter', 'rb-add-icon')" src="../assets/images/icons/plus-square.svg" class="h-10 cursor-pointer" alt="">
                                     <span class="text-darkGray">RB</span>
                                 </div>                             
@@ -121,7 +121,7 @@
                         <div class="h-1/4 center ">
                             <div class="h-full img-shadow-effect relative overflow-hidden" id="goalkepeer">
                                 <img src="../assets/images/stadium/card-normal.webp" class="h-full" alt="">
-                                <div onclick="addPlayerToTeam('GK', 'goalkepeer', 'goalkepeers', 'starter', 'gk-add-icon')" class="absolute cursor-pointer top-0 bottom-0 w-full center flex-col gap-2" id="gk-add-icon">
+                                <div onclick="addPlayerToTeam('GK', 'goalkepeer', 'goalkepeers', 'starter', 'gk-add-icon')" class="add-icon absolute cursor-pointer top-0 bottom-0 w-full center flex-col gap-2" id="gk-add-icon">
                                     <img src="../assets/images/icons/plus-square.svg" class="h-10" alt="">
                                     <span class="text-darkGray">GK</span>
                                 </div>
@@ -136,49 +136,49 @@
                     <div class="flex h-32 max-md:h-24 gap-4 max-md:gap-1">
                         <div class="h-full relative overflow-hidden img-shadow-effect" id="goalkepeer-bench">
                             <img src="../assets/images/stadium/card-normal.webp" class="h-full" alt="">
-                            <div class="absolute top-0 bottom-0 w-full center flex-col gap-2" id="gk-add-icon-bench">
+                            <div class="add-icon absolute top-0 bottom-0 w-full center flex-col gap-2" id="gk-add-icon-bench">
                                 <img onclick="addPlayerToTeam('GK', 'goalkepeer-bench', 'goalkepeers', 'bench', 'gk-add-icon-bench')" src="../assets/images/icons/plus-square.svg" class="h-10 cursor-pointer" alt="">
                                 <span class="text-darkGray">GK</span>
                             </div>
                         </div>
                         <div class="h-full relative overflow-hidden img-shadow-effect" id="centralBack-bench-one">
                             <img src="../assets/images/stadium/card-normal.webp" class="h-full" alt="">
-                            <div class="absolute top-0 bottom-0 w-full center flex-col gap-2" id="cb1-add-icon-bench">
+                            <div class="add-icon absolute top-0 bottom-0 w-full center flex-col gap-2" id="cb1-add-icon-bench">
                                 <img onclick="addPlayerToTeam('CB', 'centralBack-bench-one', 'deffenders', 'bench', 'cb1-add-icon-bench')" src="../assets/images/icons/plus-square.svg" class="h-10 cursor-pointer" alt="">
                                 <span class="text-darkGray">CB</span>
                             </div>
                         </div>
                         <div class="h-full relative overflow-hidden img-shadow-effect" id="centralBack-bench-two">
                             <img src="../assets/images/stadium/card-normal.webp" class="h-full" alt="">
-                            <div class="absolute top-0 bottom-0 w-full center flex-col gap-2" id="cb2-add-icon-bench">
+                            <div class="add-icon absolute top-0 bottom-0 w-full center flex-col gap-2" id="cb2-add-icon-bench">
                                 <img onclick="addPlayerToTeam('CB', 'centralBack-bench-two', 'deffenders', 'bench', 'cb2-add-icon-bench')" src="../assets/images/icons/plus-square.svg" class="h-10 cursor-pointer" alt="">
                                 <span class="text-darkGray">CB</span>
                             </div>
                         </div>
                         <div class="h-full relative overflow-hidden img-shadow-effect" id="centralMidfielder-bench">
                             <img src="../assets/images/stadium/card-normal.webp" class="h-full" alt="">
-                            <div class="absolute top-0 bottom-0 w-full center flex-col gap-2" id="cm-add-icon-bench">
+                            <div class="add-icon absolute top-0 bottom-0 w-full center flex-col gap-2" id="cm-add-icon-bench">
                                 <img onclick="addPlayerToTeam('CM', 'centralMidfielder-bench', 'midfielders', 'bench', 'cm-add-icon-bench')" src="../assets/images/icons/plus-square.svg" class="h-10 cursor-pointer" alt="">
                                 <span class="text-darkGray">CM</span>
                             </div>
                         </div>
                         <div class="h-full relative overflow-hidden img-shadow-effect" id="striker-bench">
                             <img src="../assets/images/stadium/card-normal.webp" class="h-full" alt="">
-                            <div class="absolute top-0 bottom-0 w-full center flex-col gap-2" id="st-add-icon-bench">
+                            <div class="add-icon absolute top-0 bottom-0 w-full center flex-col gap-2" id="st-add-icon-bench">
                                 <img onclick="addPlayerToTeam('ST', 'striker-bench', 'attackers', 'bench', 'st-add-icon-bench')" src="../assets/images/icons/plus-square.svg" class="h-10 cursor-pointer" alt="">
                                 <span class="text-darkGray">ST</span>
                             </div>
                         </div>
                         <div class="h-full relative overflow-hidden img-shadow-effect" id="leftWinger-bench">
                             <img src="../assets/images/stadium/card-normal.webp" class="h-full" alt="">
-                            <div class="absolute top-0 bottom-0 w-full center flex-col gap-2" id="lw-add-icon-bench">
+                            <div class="add-icon absolute top-0 bottom-0 w-full center flex-col gap-2" id="lw-add-icon-bench">
                                 <img onclick="addPlayerToTeam('LW', 'leftWinger-bench', 'attackers', 'bench', 'lw-add-icon-bench')" src="../assets/images/icons/plus-square.svg" class="h-10 cursor-pointer" alt="">
                                 <span class="text-darkGray">LW</span>
                             </div>
                         </div>
                         <div class="h-full relative overflow-hidden img-shadow-effect" id="rightWinger-bench">
                             <img src="../assets/images/stadium/card-normal.webp" class="h-full" alt="">
-                            <div class="absolute top-0 bottom-0 w-full center flex-col gap-2" id="rw-add-icon-bench">
+                            <div class="add-icon absolute top-0 bottom-0 w-full center flex-col gap-2" id="rw-add-icon-bench">
                                 <img onclick="addPlayerToTeam('RW', 'rightWinger-bench', 'attackers', 'bench', 'rw-add-icon-bench')" src="../assets/images/icons/plus-square.svg" class="h-10 cursor-pointer" alt="">
                                 <span class="text-darkGray">RW</span>
                             </div>
