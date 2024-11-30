@@ -114,6 +114,7 @@ window.addPlayerToTeam = (current_position, player_position_in_stadium, player_r
 
     // Style for toast notification
     const toast_notif = document.getElementById("toast-notif");
+    toast_notif.textContent = "You can add a player from the players list";
     toast_notif.style.right = "1%";
     setTimeout(() => {
         toast_notif.style.right = "-100%";
