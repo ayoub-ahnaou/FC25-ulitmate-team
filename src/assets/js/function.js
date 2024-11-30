@@ -253,3 +253,15 @@ window.removePlayerFromTeam = (player_id) => {
     player.player_role = "";
     closeDetailsPopUpPlayer();
 }
+
+// function to handle substituting player
+window.substitutePlayer = (player_id) => {
+    const player = players[player_id - 1];
+
+    goalkepeers = players.filter((player) => player.position === "GK" && player.selected && player.id != player_id);
+    deffenders = players.filter((player) => (player.position === "CB" || player.position === "RB" || player.position === "LB") && player.selected && player.id != player_id);
+    midfielders = players.filter((player) => player.position === "CM" && player.selected && player.id != player_id);
+    attackers = players.filter((player) => (player.position === "RW" || player.position === "LW" || player.position === "ST") && player.selected && player.id != player_id);
+    
+    closeDetailsPopUpPlayer();
+}
