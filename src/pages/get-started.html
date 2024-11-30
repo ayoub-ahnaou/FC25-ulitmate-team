@@ -9,6 +9,7 @@
     <script type="module" src="../assets/js/script.js" defer></script>
     <script type="module" src="../assets/js/function.js" defer></script>
 </head>
+<!-- TODO: REmove those class after finishing the form interface (my-body..., blur) -->
 <body class="">
     <div class="background flex flex-col h-auto"> 
         <nav class="center py-2 text-black bg-white sticky top-0 z-10">
@@ -238,6 +239,110 @@
     <div class="loader fixed center top-0 bottom-0 w-full bg-black z-50">
         <div class="circle center"></div>
         <img src="../assets/images/footer/ea-medallion-white.svg" class="size-10 absolute" alt="">
+    </div>
+
+    <div class="h-[100vh] hidden center top-0 w-full max-md:p-4 text-base" id="add-player-form">
+        <section class="rounded-lg h-auto w-3/5 max-md:w-full bg-darkGray flex flex-col py-4" id="main-form">
+            <h1 class="center font-gaMaamli p-4 text-2xl">Create new Player</h1>
+
+            <div class="flex flex-col p-4">
+                <div class="flex gap-4 items-end mb-4 max-sm:flex-col">
+                    <div class="flex flex-col max-sm:w-full gap-2 flex-1">
+                        <label for="name" class="text-base">Full Name</label>
+                        <input type="text" id="name" class="text-gray-300 bg-black focus:border  outline-none border-none px-3 py-2 rounded-lg" placeholder="eg: Ayoub Ahnaou" autocomplete="off">
+                    </div>
+
+                    <div class="flex items-end max-sm:w-full justify-between">
+                        <div class="flex flex-col w-full gap-2">
+                            <label for="positions" class="text-base">Position</label>
+                            <select id="positions" class="bg-black outline-none text-gray-300 text-sm rounded-lg border border-transparent focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 pr-0">
+                                <option value="" selected="">Choose a Position</option>
+                                <option value="st">ST</option>
+                                <option value="lx">LW</option>
+                                <option value="rw">RW</option>
+                                <option value="cm">CM</option>
+                                <option value="cb">CB</option>
+                                <option value="rb">RB</option>
+                                <option value="lb">LB</option>
+                                <option value="gk">GK</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex gap-4 mb-4">
+                    <div class="flex items-end justify-between flex-1 gap-2">
+                        <div class="flex flex-col flex-1">
+                            <label for="clubs" class="block mb-2 text-sm font-medium text-white">Club</label>
+                            <select id="clubs" class="bg-black outline-none text-gray-300 text-sm rounded-lg border border-transparent focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 pr-0">
+                                <option value="" selected="">Choose a Club</option>
+                                <option value="Inter Miami">Inter Miami</option>
+                                <option value="Al Nassr">Al Nassr</option>
+                                <option value="Manchester City">Manchester City</option>
+                                <option value="Real Madrid">Real Madrid</option>
+                                <option value="Liverpool">Liverpool</option>
+                                <option value="Al-Hilal">Al-Hilal</option>
+                                <option value="Bayern Munich">Bayern Munich</option>
+                                <option value="Atletico Madrid">Atletico Madrid</option>
+                                <option value="Al-Ittihad">Al-Ittihad</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="flex items-end justify-between flex-1 gap-2">
+                        <div class="flex flex-col flex-1">
+                            <label for="countries" class="block mb-2 text-sm font-medium text-white">Country</label>
+                            <select id="countries" class="bg-black outline-none border border-transparent focus:ring-blue-500 focus:border-blue-500 text-gray-300 text-sm rounded-lg block w-full p-2.5 pr-0">
+                                <option value="" selected="">Choose a Country</option>
+                                <option value="Argentina">Argentina</option>
+                                <option value="Portugal">Portugal</option>
+                                <option value="Belgium">Belgium</option>
+                                <option value="France">France</option>
+                                <option value="Netherlands">Netherlands</option>
+                                <option value="Germany">Germany</option>
+                                <option value="Brazil">Brazil</option>
+                                <option value="Egypt">Egypt</option>
+                                <option value="Croatia">Croatia</option>
+                                <option value="Morocco">Morocco</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex flex-wrap gap-2 text-sm justify-between mb-12" id="stats">
+                    <div class="flex flex-col flex-1">
+                        <label class="mb-1 text-base">PAC</label>
+                        <input type="number" class="text-white bg-black outline-none rounded-lg p-1 text-center" placeholder="0 - 100" min="0" max="100">
+                    </div>
+                    <div class="flex flex-col flex-1">
+                        <label class="mb-1 text-base">SHO</label>
+                        <input type="number" class="text-white bg-black outline-none rounded-lg p-1 text-center" placeholder="0 - 100" min="0" max="100">
+                    </div>
+                    <div class="flex flex-col flex-1">
+                        <label class="mb-1 text-base">PAS</label>
+                        <input type="number" class="text-white bg-black outline-none rounded-lg p-1 text-center" placeholder="0 - 100" min="0" max="100">
+                    </div>
+                    <div class="flex flex-col flex-1">
+                        <label class="mb-1 text-base">DRI</label>
+                        <input type="number" class="text-white bg-black outline-none rounded-lg p-1 text-center" placeholder="0 - 100" min="0" max="100">
+                    </div>
+                    <div class="flex flex-col flex-1">
+                        <label class="mb-1 text-base">DEF</label>
+                        <input type="number" class="text-white bg-black outline-none rounded-lg p-1 text-center" placeholder="0 - 100" min="0" max="100">
+                    </div>
+                    <div class="flex flex-col flex-1">
+                        <label class="mb-1 text-base">PHY</label>
+                        <input type="number" class="text-white bg-black outline-none rounded-lg p-1 text-center" placeholder="0 - 100" min="0" max="100">
+                    </div>
+                </div>
+
+                <div class="flex gap-2">
+                    <button class="block mx-auto bg-gray-600 py-1 px-6 text-base rounded-lg">Cancel</button>
+                    <button class="block mx-auto w-full bg-goldColor py-1 px-4 text-base rounded-lg">Create +</button>
+                </div>
+
+            </div>
+        </section>
     </div>
 </body>
 </html>
