@@ -667,7 +667,7 @@ window.handleCreateNewPlayer = () => {
     const country = document.getElementById("countries").value;
 
     const stats = affectStrengthStats(position);
-
+    
     const player = {
         id: players.length + 1,
         name: name,
@@ -679,7 +679,10 @@ window.handleCreateNewPlayer = () => {
         rating: 99,
         salacted: false,
         stats: stats,
-    }
+    };
+
+    affectCountryFlag(country, player);
+    affectClubLogo(club, player);
 
     const isDataValid = validateData(player);
     if(isDataValid != 1){
@@ -774,4 +777,20 @@ function affectStrengthStats(position) {
     }
 
     return stats;
+}
+function affectCountryFlag(country, player) {
+    countries.map((element) => {
+        if(country == element.country){
+            player.flag = element.flag;
+            return;
+        }
+    })
+}
+function affectClubLogo(club, player) {
+    clubs.map((element) => {
+        if(club == element.club){
+            player.logo = element.logo;
+            return;
+        }
+    })
 }
