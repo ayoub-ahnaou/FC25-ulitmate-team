@@ -642,3 +642,17 @@ window.hideFormPopUp = () => {
 
     closeDetailsPopUpPlayer();
 }
+
+// handle update stats values if user select a goalkepeer
+window.handleUpdateStatsValues = () => {
+    const position = document.getElementById("positions").value;
+    const goalkepeerStats = ["DIV", "HAN", "KIC", "REF", "SPE", "POS"];
+    const normalPlayersStats = ["PAC", "SHO", "PAS", "DRI", "DEF", "PHY"];
+
+    const stats_Dom_values = document.getElementById("stats").children;
+    if(position === "gk")
+        Array.from(stats_Dom_values).map((item, index) => item.children[0].textContent = goalkepeerStats[index]);
+    else 
+        Array.from(stats_Dom_values).map((item, index) => item.children[0].textContent = normalPlayersStats[index]);
+
+}
