@@ -703,6 +703,21 @@ window.handleCreateNewPlayer = () => {
     }
 
     const isDataValid = validateData(player);
+    if(isDataValid != 1){
+        toast_error.textContent = isDataValid;
+        toast_error.style.right = "1%";
+        setTimeout(() => {
+            toast_error.style.right = "-100%";
+        }, 2500);
+    }
+    else {
+        toast_succes.textContent = "Player added succesfully.";
+        toast_succes.style.right = "1%";
+        setTimeout(() => {
+            toast_succes.style.right = "-100%";
+        }, 2500);
+    }
+
 }
 
 function validateData(player) {
