@@ -625,6 +625,16 @@ add_player_icon.onclick = () => {
     background.classList.add("blur");
 }
 
+// handle closing form pop-up by clicking outside of it
+document.addEventListener("click", (e) => {
+    if(e.target.id == "add-player-form"){
+        document.getElementById("add-player-form").classList.add("hidden");
+        document.getElementById("add-player-form").classList.remove("absolute");
+
+        closeDetailsPopUpPlayer();
+    }
+});
+
 // handle close the form pop-up
 window.hideFormPopUp = () => {
     document.getElementById("add-player-form").classList.add("hidden");
