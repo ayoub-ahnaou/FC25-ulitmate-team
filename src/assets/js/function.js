@@ -716,6 +716,11 @@ window.handleCreateNewPlayer = () => {
         setTimeout(() => {
             toast_succes.style.right = "-100%";
         }, 2500);
+
+        // push the new player to players list then show the new players updated
+        players.push(player);
+        updateListPlayers(players)
+        hideFormPopUp();
     }
 
 }
