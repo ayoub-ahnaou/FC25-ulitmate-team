@@ -4,7 +4,7 @@ const players = data.players;
 
 const background = document.querySelector(".background");
 const playerDetailsContainer = document.getElementById("player-details-container");
-window.showPlayerDetails = (player_id, player_position, card_position, players_role, add_icons_id, type) => {
+window.showPlayerDetails = (player_id) => {
     const player = players[player_id - 1];
     const stats_keys = Object.keys(player.stats);
     const stats_values = Object.values(player.stats);
@@ -42,7 +42,7 @@ window.showPlayerDetails = (player_id, player_position, card_position, players_r
                     <span class="cursor-pointer" onclick="closePlayerOption()">X</span>
                 </div>
                 <div class="flex-grow-0 pb-4">
-                    <p class="px-4 cursor-pointer hover:bg-gray-100" onclick="removePlayerFromTeam('${player.id}', '${player_position}', '${card_position}', '${players_role}', '${add_icons_id}', '${type}')">
+                    <p class="px-4 cursor-pointer hover:bg-gray-100" onclick="removePlayerFromTeam('${player.id}')">
                         ${player.selected ? "Remove player from team" : ""}
                     </p>
                     <p class="px-4 cursor-pointer hover:bg-gray-100" onclick="insertPlayerIntoTeam('${player.id}')">
@@ -51,7 +51,7 @@ window.showPlayerDetails = (player_id, player_position, card_position, players_r
                     <p class="px-4 cursor-pointer hover:bg-gray-100">
                         ${!player.selected ? "Delete Player from players list" : ""}
                     </p>
-                    <p class="px-4 cursor-pointer hover:bg-gray-100">
+                    <p class="px-4 cursor-pointer hover:bg-gray-100" onclick="substitutePlayer('${player.id}')">
                         ${player.selected ? "Substitute Player" : ""}
                     </p>
                 </div>
@@ -91,21 +91,26 @@ function closeDetailsPopUpPlayer() {
     playerDetailsContainer.innerHTML = "";
 }
 
-const starters = JSON.parse(localStorage.getItem("starters")) || []; // array where the 11 players will be stored
-const bench = JSON.parse(localStorage.getItem("bench")) || []; // array where changment will be stored
-const team = JSON.parse(localStorage.getItem("team")) || []; // variable contains all players starters and bench
+let goalkepeers;
+let deffenders;
+let midfielders;
+let attackers;
+
+const starters = []; //JSON.parse(localStorage.getItem("starters")) || []; // array where the 11 players will be stored
+const bench = []; //JSON.parse(localStorage.getItem("bench")) || []; // array where changment will be stored
+const team = []; //JSON.parse(localStorage.getItem("team")) || []; // variable contains all players starters and bench
 
 const cancelBtn = document.getElementById("cancel-btn");
 
 // function to add a player from the list players to the TEAM
-window.addPlayerToTeam = (player_position, card_position, players_role, type, add_icons_id) => {
+window.addPlayerToTeam = (current_position, player_position_in_stadium, player_role, bench_or_starter, add_icons_id) => {
     // player position: CM/RM/CB... card_position: goalKeeper, centreRightBack, centralMidfielder, centralRightMidfielder... type: bench/starter
-    let goalkepeers = players.filter((gk) => gk.position === "GK" && !gk.selected)
-    let deffenders = players.filter((cb) => (cb.position === "CB" || cb.position === "RB" || cb.position === "LB") && !cb.selected)
-    let midfielders = players.filter((cm) => cm.position === "CM" && !cm.selected)
-    let attackers = players.filter((ac) => (ac.position === "RW" || ac.position === "LW" || ac.position === "ST") && !ac.selected)
-    
-    const card_area = document.getElementById(card_position);
+    goalkepeers = players.filter((gk) => gk.position === "GK" && !gk.selected)
+    deffenders = players.filter((cb) => (cb.position === "CB" || cb.position === "RB" || cb.position === "LB") && !cb.selected)
+    midfielders = players.filter((cm) => cm.position === "CM" && !cm.selected)
+    attackers = players.filter((ac) => (ac.position === "RW" || ac.position === "LW" || ac.position === "ST") && !ac.selected)
+
+    const card_player_area = document.getElementById(player_position_in_stadium);
 
     // Style for toast notification
     const toast_notif = document.getElementById("toast-notif");
@@ -116,27 +121,34 @@ window.addPlayerToTeam = (player_position, card_position, players_role, type, ad
 
     document.getElementById(add_icons_id).style.display = "none"; // hide the plus icon
     // show the players filtered
-    if(players_role == "goalkepeers") updateListPlayers(goalkepeers); 
-    if(players_role == "deffenders") updateListPlayers(deffenders); 
-    if(players_role == "midfielders") updateListPlayers(midfielders); 
-    if(players_role == "attackers") updateListPlayers(attackers); 
+    if(player_role == "goalkepeers") updateListPlayers(goalkepeers); 
+    if(player_role == "deffenders") updateListPlayers(deffenders); 
+    if(player_role == "midfielders") updateListPlayers(midfielders); 
+    if(player_role == "attackers") updateListPlayers(attackers); 
     cancelBtn.classList.remove("hidden");
-    card_area.classList.add("gold-shadow");
+    card_player_area.classList.add("gold-shadow");
 
     // show all players if the user want cancel the add action
     cancelBtn.onclick = () => {
         document.getElementById(add_icons_id).style.display = "flex";
         cancelBtn.classList.add("hidden");
-        card_area.classList.remove("gold-shadow");
+        card_player_area.classList.remove("gold-shadow");
         list_players();
     }
 
     window.appendPlayerToTeam = (player_id) => {
         const player = players[player_id - 1];
         player.selected = true;
-        card_area.innerHTML = `
+        
+        player.current_position = current_position;
+        player.player_position_in_stadium = player_position_in_stadium;
+        player.player_role = player_role;
+        player.bench_or_starter = bench_or_starter;
+        player.add_icons_id = add_icons_id;
+    
+        card_player_area.innerHTML = `
             <img src="../assets/images/stadium/card-normal.webp" class="h-full" alt="">
-            <div class="h-3/5 w-full absolute top-0 flex pl-2 cursor-pointer" onclick="showPlayerDetails('${player.id}', '${player_position}', '${card_position}', '${players_role}', '${add_icons_id}', '${type}')">
+            <div class="h-3/5 w-full absolute top-0 flex pl-2 cursor-pointer" onclick="showPlayerDetails('${player.id}')">
                 <div class="w-1/4 flex flex-col items-center justify-center">
                     <p class="text-lg max-sm:text-xs font-bold">${player.rating}</p>
                     <img src=${player.logo} class="max-md:size-auto" alt="">
@@ -148,15 +160,15 @@ window.addPlayerToTeam = (player_position, card_position, players_role, type, ad
             <p class="absolute bottom-0 text-[.7rem] max-md:text-[.5rem] h-2/5 px-1 text-center w-full font-bold">${player.name}</p>
         `;
 
-        if(type == "starter") starters.push(player);
-        if(type == "bench") bench.push(player);
+        if(bench_or_starter == "starter") starters.push(player);
+        if(bench_or_starter == "bench") bench.push(player);
         team.push(player); // push the player to team
 
         cancelBtn.classList.add("hidden");
-        card_area.classList.remove("gold-shadow");
-        localStorage.setItem("starters", JSON.stringify(starters));
-        localStorage.setItem("bench", JSON.stringify(bench));
-        localStorage.setItem("team", JSON.stringify(team));
+        card_player_area.classList.remove("gold-shadow");
+        // HACK: localStorage.setItem("starters", JSON.stringify(starters));
+        // HACK: localStorage.setItem("bench", JSON.stringify(bench));
+        // HACK: localStorage.setItem("team", JSON.stringify(team));
         
         list_players();
     }
@@ -211,28 +223,4 @@ window.insertPlayerIntoTeam = (player_id) => {
         }
     })
     setTimeout(() => toastWarning.style.right = "-200%", 10000);
-}
-
-// function to handle remove a player from the starter or bench players
-window.removePlayerFromTeam = (player_id, player_position, card_position, players_role, add_icons_id, type) => {
-    const player = players[player_id - 1];
-    const card_area = document.getElementById(card_position);
-
-    player.selected = false;
-    card_area.innerHTML = `
-        <img src="../assets/images/stadium/card-normal.webp" class="h-full" alt="">
-        <div class="absolute top-0 bottom-0 w-full center flex-col gap-2" id="${add_icons_id}">
-            <img onclick="addPlayerToTeam('${player_position}', '${card_position}', '${players_role}', '${type}', '${add_icons_id}')" src="../assets/images/icons/plus-square.svg" class="h-10 cursor-pointer" alt="">
-            <span class="text-darkGray">${player_position}</span>
-        </div>
-    `;
-
-    const toast_succes = document.getElementById("toast-succes");
-    toast_succes.textContent = `Player removed succsefully from ${type}`;
-    toast_succes.style.right = "1%";
-    setTimeout(() => {
-        toast_succes.style.right = "-100%";
-    }, 2000);
-
-    closeDetailsPopUpPlayer();
 }
