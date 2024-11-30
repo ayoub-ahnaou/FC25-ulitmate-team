@@ -262,6 +262,44 @@ window.substitutePlayer = (player_id) => {
     deffenders = players.filter((player) => (player.position === "CB" || player.position === "RB" || player.position === "LB") && player.selected && player.id != player_id);
     midfielders = players.filter((player) => player.position === "CM" && player.selected && player.id != player_id);
     attackers = players.filter((player) => (player.position === "RW" || player.position === "LW" || player.position === "ST") && player.selected && player.id != player_id);
+
+    if(player.player_role === "goalkepeers"){
+        cancelBtn.classList.toggle("hidden");
+        goalkepeers.map((player_to_substitute) => {
+            document.getElementById(player_to_substitute.player_position_in_stadium).classList.add("gold-shadow");
+            const safeJson = JSON.stringify(goalkepeers).replace(/'/g, "\\'").replace(/"/g, '&quot;');
+
+            // change the function in card player while substituting
+            document.getElementById(player_to_substitute.player_position_in_stadium).innerHTML = `
+                <img src="../assets/images/stadium/card-normal.webp" class="h-full" alt="">
+                <div class="h-3/5 w-full absolute top-0 flex pl-2 cursor-pointer" onclick="switchPlayer('${player_to_substitute.id}', '${player.id}', ${safeJson})">
+                    <div class="w-1/4 flex flex-col items-center justify-center">
+                        <p class="text-lg max-sm:text-xs font-bold">${player_to_substitute.rating}</p>
+                        <img src=${player_to_substitute.logo} class="max-md:size-auto" alt="">
+                    </div>
+                    <div class="center w-3/4">
+                        <img src=${player_to_substitute.photo} class="w-full" alt="">
+                    </div>
+                </div>
+                <p class="absolute bottom-0 text-[.7rem] max-md:text-[.5rem] h-2/5 px-1 text-center w-full font-bold">${player_to_substitute.name}</p>
+            `;
+        });
+
+        // Make the player card clickable to cancel the substitung option
+        document.getElementById(player.player_position_in_stadium).innerHTML = `
+            <img src="../assets/images/stadium/card-normal.webp" class="h-full" alt="">
+            <div class="h-3/5 w-full absolute top-0 flex pl-2 cursor-pointer" onclick="cancelSubstitution()">
+                <div class="w-1/4 flex flex-col items-center justify-center">
+                    <p class="text-lg max-sm:text-xs font-bold">${player.rating}</p>
+                    <img src=${player.logo} class="max-md:size-auto" alt="">
+                </div>
+                <div class="center w-3/4">
+                    <img src=${player.photo} class="w-full" alt="">
+                </div>
+            </div>
+            <p class="absolute bottom-0 text-[.7rem] max-md:text-[.5rem] h-2/5 px-1 text-center w-full font-bold">${player.name}</p>
+        `;
+    }
     
     closeDetailsPopUpPlayer();
 }
