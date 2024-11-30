@@ -662,7 +662,7 @@ window.handleUpdateStatsValues = () => {
 window.handleCreateNewPlayer = () => {
     // get all inputs values from the form
     const name = document.getElementById("name").value;
-    const position = document.getElementById("positions").value;
+    const position = document.getElementById("positions").value.toUpperCase();
     const club = document.getElementById("clubs").value;
     const country = document.getElementById("countries").value;
 
@@ -689,6 +689,20 @@ window.handleCreateNewPlayer = () => {
         }
     }
 
+    const player = {
+        id: players.length + 1,
+        name: name,
+        photo: "../assets/images/stadium/unknown-player.png",
+        large_pic: "../assets/images/stadium/unknown-player.png",
+        position: position,
+        nationality: country,
+        club: club,
+        rating: 99,
+        salacted: false,
+        stats: stats,
+    }
+
+    const isDataValid = validateData(player);
 }
 
 function validateData(player) {
