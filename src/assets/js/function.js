@@ -658,6 +658,39 @@ window.handleUpdateStatsValues = () => {
 
 }
 
+// function to handle creating new player
+window.handleCreateNewPlayer = () => {
+    // get all inputs values from the form
+    const name = document.getElementById("name").value;
+    const position = document.getElementById("positions").value;
+    const club = document.getElementById("clubs").value;
+    const country = document.getElementById("countries").value;
+
+    let stats = {};
+    // handle if the player position different of goalkepeer
+    if(position === "GK" || position === "gk"){
+        stats = {
+            diving: 88,
+            handling: 84,
+            kicking: 75,
+            reflexes: 90,
+            speed: 50,
+            positioning: 85
+        }
+    }
+    else {
+        stats = {
+            pace: 88,
+            shooting: 84,
+            passing: 75,
+            dribbling: 90,
+            defending: 50,
+            physical: 85
+        }
+    }
+
+}
+
 function validateData(player) {
     const nameRegex = /^[^:;?!@&#$<>&'"-_=+²1234567890%*µ]+$/; // regex for special character
     const emptyRegex = /^\s*$/; // regex for empty values
