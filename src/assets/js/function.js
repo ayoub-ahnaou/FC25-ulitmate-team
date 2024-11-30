@@ -663,10 +663,20 @@ function validateData(player) {
     const emptyRegex = /^\s*$/; // regex for empty values
 
     if (emptyRegex.test(player.name)) return "Please fill the name field.";
-    if (!nameRegex.test(player.name)) return "Please do not use a special characters or numbers.";
+    if (!nameRegex.test(player.name.toLowerCase())) return "Please do not use a special characters or numbers.";
     if (emptyRegex.test(player.position)) return "Please select the player position.";
     if (emptyRegex.test(player.club)) return "Please select a club.";
     if (emptyRegex.test(player.nationality)) return "Please select a country.";
+
+    const stats_Dom_values = document.getElementById("stats").children;
+
+    const array_of_stats = Array.from(stats_Dom_values);
+    for(let i=0; i<6; i++){
+        if(array_of_stats[i].children[1].value == "")
+            return "Please fill the "+ array_of_stats[i].children[0].textContent.toLocaleLowerCase() +" strentgh field.";
+        if(array_of_stats[i].children[1].value > 100 || array_of_stats[i].children[1].value < 0)
+            return "Strength value in "+ array_of_stats[i].children[0].textContent.toLocaleLowerCase() +" must be between 0 and 100."
+    }
 
     return 1;
 }
