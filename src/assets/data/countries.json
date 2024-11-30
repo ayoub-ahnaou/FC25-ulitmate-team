@@ -1,0 +1,12 @@
+[
+  { "country": "Argentina", "flag": "https://cdn.sofifa.net/flags/ar.png" },
+  { "country": "Portugal", "flag": "https://cdn.sofifa.net/flags/pt.png" },
+  { "country": "Belgium", "flag": "https://cdn.sofifa.net/flags/be.png" },
+  { "country": "France", "flag": "https://cdn.sofifa.net/flags/fr.png" },
+  { "country": "Netherlands", "flag": "https://cdn.sofifa.net/flags/nl.png" },
+  { "country": "Germany", "flag": "https://cdn.sofifa.net/flags/de.png" },
+  { "country": "Brazil", "flag": "https://cdn.sofifa.net/flags/br.png" },
+  { "country": "Egypt", "flag": "https://cdn.sofifa.net/flags/eg.png" },
+  { "country": "Croatia", "flag": "https://cdn.sofifa.net/flags/hr.png" },
+  { "country": "Morocco", "flag": "https://cdn.sofifa.net/flags/ma.png" }
+]
