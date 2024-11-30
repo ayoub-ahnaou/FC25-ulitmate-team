@@ -300,6 +300,219 @@ window.substitutePlayer = (player_id) => {
             <p class="absolute bottom-0 text-[.7rem] max-md:text-[.5rem] h-2/5 px-1 text-center w-full font-bold">${player.name}</p>
         `;
     }
+
+    if(player.player_role === "deffenders"){
+        cancelBtn.classList.toggle("hidden");
+        deffenders.map((player_to_substitute) => {
+            document.getElementById(player_to_substitute.player_position_in_stadium).classList.add("gold-shadow");
+            const safeJson = JSON.stringify(deffenders).replace(/'/g, "\\'").replace(/"/g, '&quot;');
+
+            // change the function in card player while substituting
+            document.getElementById(player_to_substitute.player_position_in_stadium).innerHTML = `
+                <img src="../assets/images/stadium/card-normal.webp" class="h-full" alt="">
+                <div class="h-3/5 w-full absolute top-0 flex pl-2 cursor-pointer" onclick="switchPlayer('${player_to_substitute.id}', '${player.id}', ${safeJson})">
+                    <div class="w-1/4 flex flex-col items-center justify-center">
+                        <p class="text-lg max-sm:text-xs font-bold">${player_to_substitute.rating}</p>
+                        <img src=${player_to_substitute.logo} class="max-md:size-auto" alt="">
+                    </div>
+                    <div class="center w-3/4">
+                        <img src=${player_to_substitute.photo} class="w-full" alt="">
+                    </div>
+                </div>
+                <p class="absolute bottom-0 text-[.7rem] max-md:text-[.5rem] h-2/5 px-1 text-center w-full font-bold">${player_to_substitute.name}</p>
+            `;
+        });
+
+        // Make the player card clickable to cancel the substitung option
+        document.getElementById(player.player_position_in_stadium).innerHTML = `
+            <img src="../assets/images/stadium/card-normal.webp" class="h-full" alt="">
+            <div class="h-3/5 w-full absolute top-0 flex pl-2 cursor-pointer" onclick="cancelSubstitution()">
+                <div class="w-1/4 flex flex-col items-center justify-center">
+                    <p class="text-lg max-sm:text-xs font-bold">${player.rating}</p>
+                    <img src=${player.logo} class="max-md:size-auto" alt="">
+                </div>
+                <div class="center w-3/4">
+                    <img src=${player.photo} class="w-full" alt="">
+                </div>
+            </div>
+            <p class="absolute bottom-0 text-[.7rem] max-md:text-[.5rem] h-2/5 px-1 text-center w-full font-bold">${player.name}</p>
+        `;
+
+        cancelBtn.onclick = () => {
+            cancelBtn.classList.add("hidden");
+            deffenders.map((player) => {
+                document.getElementById(player.player_position_in_stadium).classList.remove("gold-shadow");
+                document.getElementById(player.player_position_in_stadium).innerHTML = `
+                    <img src="../assets/images/stadium/card-normal.webp" class="h-full" alt="">
+                    <div class="h-3/5 w-full absolute top-0 flex pl-2 cursor-pointer" onclick="showPlayerDetails('${player.id}')">
+                        <div class="w-1/4 flex flex-col items-center justify-center">
+                            <p class="text-lg max-sm:text-xs font-bold">${player.rating}</p>
+                            <img src=${player.logo} class="max-md:size-auto" alt="">
+                        </div>
+                        <div class="center w-3/4">
+                            <img src=${player.photo} class="w-full" alt="">
+                        </div>
+                    </div>
+                    <p class="absolute bottom-0 text-[.7rem] max-md:text-[.5rem] h-2/5 px-1 text-center w-full font-bold">${player.name}</p>
+                `;
+            });
+            document.getElementById(player.player_position_in_stadium).innerHTML = `
+                <img src="../assets/images/stadium/card-normal.webp" class="h-full" alt="">
+                <div class="h-3/5 w-full absolute top-0 flex pl-2 cursor-pointer" onclick="showPlayerDetails('${player.id}')">
+                    <div class="w-1/4 flex flex-col items-center justify-center">
+                        <p class="text-lg max-sm:text-xs font-bold">${player.rating}</p>
+                        <img src=${player.logo} class="max-md:size-auto" alt="">
+                    </div>
+                    <div class="center w-3/4">
+                        <img src=${player.photo} class="w-full" alt="">
+                    </div>
+                </div>
+                <p class="absolute bottom-0 text-[.7rem] max-md:text-[.5rem] h-2/5 px-1 text-center w-full font-bold">${player.name}</p>
+            `;
+        }
+    }
+
+    if(player.player_role === "midfielders"){
+        cancelBtn.classList.toggle("hidden");
+        midfielders.map((player_to_substitute) => {
+            document.getElementById(player_to_substitute.player_position_in_stadium).classList.add("gold-shadow");
+            const safeJson = JSON.stringify(midfielders).replace(/'/g, "\\'").replace(/"/g, '&quot;');
+
+            // change the function in card player while substituting
+            document.getElementById(player_to_substitute.player_position_in_stadium).innerHTML = `
+                <img src="../assets/images/stadium/card-normal.webp" class="h-full" alt="">
+                <div class="h-3/5 w-full absolute top-0 flex pl-2 cursor-pointer" onclick="switchPlayer('${player_to_substitute.id}', '${player.id}', ${safeJson})">
+                    <div class="w-1/4 flex flex-col items-center justify-center">
+                        <p class="text-lg max-sm:text-xs font-bold">${player_to_substitute.rating}</p>
+                        <img src=${player_to_substitute.logo} class="max-md:size-auto" alt="">
+                    </div>
+                    <div class="center w-3/4">
+                        <img src=${player_to_substitute.photo} class="w-full" alt="">
+                    </div>
+                </div>
+                <p class="absolute bottom-0 text-[.7rem] max-md:text-[.5rem] h-2/5 px-1 text-center w-full font-bold">${player_to_substitute.name}</p>
+            `;
+        });
+
+        // Make the player card clickable to cancel the substitung option
+        document.getElementById(player.player_position_in_stadium).innerHTML = `
+            <img src="../assets/images/stadium/card-normal.webp" class="h-full" alt="">
+            <div class="h-3/5 w-full absolute top-0 flex pl-2 cursor-pointer" onclick="cancelSubstitution()">
+                <div class="w-1/4 flex flex-col items-center justify-center">
+                    <p class="text-lg max-sm:text-xs font-bold">${player.rating}</p>
+                    <img src=${player.logo} class="max-md:size-auto" alt="">
+                </div>
+                <div class="center w-3/4">
+                    <img src=${player.photo} class="w-full" alt="">
+                </div>
+            </div>
+            <p class="absolute bottom-0 text-[.7rem] max-md:text-[.5rem] h-2/5 px-1 text-center w-full font-bold">${player.name}</p>
+        `;
+
+        cancelBtn.onclick = () => {
+            cancelBtn.classList.add("hidden");
+            midfielders.map((player) => {
+                document.getElementById(player.player_position_in_stadium).classList.remove("gold-shadow");
+                document.getElementById(player.player_position_in_stadium).innerHTML = `
+                    <img src="../assets/images/stadium/card-normal.webp" class="h-full" alt="">
+                    <div class="h-3/5 w-full absolute top-0 flex pl-2 cursor-pointer" onclick="showPlayerDetails('${player.id}')">
+                        <div class="w-1/4 flex flex-col items-center justify-center">
+                            <p class="text-lg max-sm:text-xs font-bold">${player.rating}</p>
+                            <img src=${player.logo} class="max-md:size-auto" alt="">
+                        </div>
+                        <div class="center w-3/4">
+                            <img src=${player.photo} class="w-full" alt="">
+                        </div>
+                    </div>
+                    <p class="absolute bottom-0 text-[.7rem] max-md:text-[.5rem] h-2/5 px-1 text-center w-full font-bold">${player.name}</p>
+                `;
+            });
+            document.getElementById(player.player_position_in_stadium).innerHTML = `
+                <img src="../assets/images/stadium/card-normal.webp" class="h-full" alt="">
+                <div class="h-3/5 w-full absolute top-0 flex pl-2 cursor-pointer" onclick="showPlayerDetails('${player.id}')">
+                    <div class="w-1/4 flex flex-col items-center justify-center">
+                        <p class="text-lg max-sm:text-xs font-bold">${player.rating}</p>
+                        <img src=${player.logo} class="max-md:size-auto" alt="">
+                    </div>
+                    <div class="center w-3/4">
+                        <img src=${player.photo} class="w-full" alt="">
+                    </div>
+                </div>
+                <p class="absolute bottom-0 text-[.7rem] max-md:text-[.5rem] h-2/5 px-1 text-center w-full font-bold">${player.name}</p>
+            `;
+        }
+    }
+
+    if(player.player_role === "attackers"){
+        cancelBtn.classList.toggle("hidden");
+        attackers.map((player_to_substitute) => {
+            document.getElementById(player_to_substitute.player_position_in_stadium).classList.add("gold-shadow");
+            const safeJson = JSON.stringify(attackers).replace(/'/g, "\\'").replace(/"/g, '&quot;');
+
+            // change the function in card player while substituting
+            document.getElementById(player_to_substitute.player_position_in_stadium).innerHTML = `
+                <img src="../assets/images/stadium/card-normal.webp" class="h-full" alt="">
+                <div class="h-3/5 w-full absolute top-0 flex pl-2 cursor-pointer" onclick="switchPlayer('${player_to_substitute.id}', '${player.id}', ${safeJson})">
+                    <div class="w-1/4 flex flex-col items-center justify-center">
+                        <p class="text-lg max-sm:text-xs font-bold">${player_to_substitute.rating}</p>
+                        <img src=${player_to_substitute.logo} class="max-md:size-auto" alt="">
+                    </div>
+                    <div class="center w-3/4">
+                        <img src=${player_to_substitute.photo} class="w-full" alt="">
+                    </div>
+                </div>
+                <p class="absolute bottom-0 text-[.7rem] max-md:text-[.5rem] h-2/5 px-1 text-center w-full font-bold">${player_to_substitute.name}</p>
+            `;
+        });
+
+        // Make the player card clickable to cancel the substitung option
+        document.getElementById(player.player_position_in_stadium).innerHTML = `
+            <img src="../assets/images/stadium/card-normal.webp" class="h-full" alt="">
+            <div class="h-3/5 w-full absolute top-0 flex pl-2 cursor-pointer" onclick="cancelSubstitution()">
+                <div class="w-1/4 flex flex-col items-center justify-center">
+                    <p class="text-lg max-sm:text-xs font-bold">${player.rating}</p>
+                    <img src=${player.logo} class="max-md:size-auto" alt="">
+                </div>
+                <div class="center w-3/4">
+                    <img src=${player.photo} class="w-full" alt="">
+                </div>
+            </div>
+            <p class="absolute bottom-0 text-[.7rem] max-md:text-[.5rem] h-2/5 px-1 text-center w-full font-bold">${player.name}</p>
+        `;
+
+        cancelBtn.onclick = () => {
+            cancelBtn.classList.add("hidden");
+            attackers.map((player) => {
+                document.getElementById(player.player_position_in_stadium).classList.remove("gold-shadow");
+                document.getElementById(player.player_position_in_stadium).innerHTML = `
+                    <img src="../assets/images/stadium/card-normal.webp" class="h-full" alt="">
+                    <div class="h-3/5 w-full absolute top-0 flex pl-2 cursor-pointer" onclick="showPlayerDetails('${player.id}')">
+                        <div class="w-1/4 flex flex-col items-center justify-center">
+                            <p class="text-lg max-sm:text-xs font-bold">${player.rating}</p>
+                            <img src=${player.logo} class="max-md:size-auto" alt="">
+                        </div>
+                        <div class="center w-3/4">
+                            <img src=${player.photo} class="w-full" alt="">
+                        </div>
+                    </div>
+                    <p class="absolute bottom-0 text-[.7rem] max-md:text-[.5rem] h-2/5 px-1 text-center w-full font-bold">${player.name}</p>
+                `;
+            });
+            document.getElementById(player.player_position_in_stadium).innerHTML = `
+                <img src="../assets/images/stadium/card-normal.webp" class="h-full" alt="">
+                <div class="h-3/5 w-full absolute top-0 flex pl-2 cursor-pointer" onclick="showPlayerDetails('${player.id}')">
+                    <div class="w-1/4 flex flex-col items-center justify-center">
+                        <p class="text-lg max-sm:text-xs font-bold">${player.rating}</p>
+                        <img src=${player.logo} class="max-md:size-auto" alt="">
+                    </div>
+                    <div class="center w-3/4">
+                        <img src=${player.photo} class="w-full" alt="">
+                    </div>
+                </div>
+                <p class="absolute bottom-0 text-[.7rem] max-md:text-[.5rem] h-2/5 px-1 text-center w-full font-bold">${player.name}</p>
+            `;
+        }
+    }
     
     closeDetailsPopUpPlayer();
 }
