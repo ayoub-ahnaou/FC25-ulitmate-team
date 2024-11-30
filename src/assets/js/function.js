@@ -2,6 +2,10 @@ const body = document.querySelector("body");
 import data from "../data/players.json" with { type: "json" };
 const players = data.players;
 
+setTimeout(() => {
+    document.querySelector(".loader").style.display = "none";
+}, 2500);
+
 const background = document.querySelector(".background");
 const playerDetailsContainer = document.getElementById("player-details-container");
 window.showPlayerDetails = (player_id) => {
