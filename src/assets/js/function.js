@@ -216,6 +216,7 @@ window.insertPlayerIntoTeam = (player_id) => {
     closeDetailsPopUpPlayer();
 
     const toastWarning = document.getElementById("toast-warning");
+    toastWarning.textContent = "You have to choose the position first, then select the player you want to insert";
     toastWarning.style.right = "1%";
 
     document.addEventListener("click", (e) => {
