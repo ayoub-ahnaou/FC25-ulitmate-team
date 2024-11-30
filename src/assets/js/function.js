@@ -105,6 +105,14 @@ const cancelBtn = document.getElementById("cancel-btn");
 // function to add a player from the list players to the TEAM
 window.addPlayerToTeam = (current_position, player_position_in_stadium, player_role, bench_or_starter, add_icons_id) => {
     // player position: CM/RM/CB... card_position: goalKeeper, centreRightBack, centralMidfielder, centralRightMidfielder... type: bench/starter
+    const all_add_icons = Array.from(document.getElementsByClassName("add-icon"));
+    all_add_icons.map((icon_item) => {
+        if(icon_item.id != add_icons_id){
+            document.getElementById(icon_item.id).parentElement.classList.remove("gold-shadow");
+            document.getElementById(icon_item.id).style.display = "flex";
+        }
+    })
+
     goalkepeers = players.filter((gk) => gk.position === "GK" && !gk.selected)
     deffenders = players.filter((cb) => (cb.position === "CB" || cb.position === "RB" || cb.position === "LB") && !cb.selected)
     midfielders = players.filter((cm) => cm.position === "CM" && !cm.selected)
