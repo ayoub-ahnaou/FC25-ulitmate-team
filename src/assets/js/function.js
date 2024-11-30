@@ -516,3 +516,57 @@ window.substitutePlayer = (player_id) => {
     
     closeDetailsPopUpPlayer();
 }
+
+window.switchPlayer = (player_in_id, player_out_id, players_array) => {
+    const player_in = players[player_in_id - 1];
+    const player_out = players[player_out_id - 1];
+
+    // switch information between players in and out
+    document.getElementById(player_out.player_position_in_stadium).innerHTML = `
+        <img src="../assets/images/stadium/card-normal.webp" class="h-full" alt="">
+        <div class="h-3/5 w-full absolute top-0 flex pl-2 cursor-pointer" onclick="showPlayerDetails('${player_in.id}')">
+            <div class="w-1/4 flex flex-col items-center justify-center">
+                <p class="text-lg max-sm:text-xs font-bold">${player_in.rating}</p>
+                <img src=${player_in.logo} class="max-md:size-auto" alt="">
+            </div>
+            <div class="center w-3/4">
+                <img src=${player_in.photo} class="w-full" alt="">
+            </div>
+        </div>
+        <p class="absolute bottom-0 text-[.7rem] max-md:text-[.5rem] h-2/5 px-1 text-center w-full font-bold">${player_in.name}</p>
+    `;
+    document.getElementById(player_in.player_position_in_stadium).innerHTML = `
+        <img src="../assets/images/stadium/card-normal.webp" class="h-full" alt="">
+        <div class="h-3/5 w-full absolute top-0 flex pl-2 cursor-pointer" onclick="showPlayerDetails('${player_out.id}')">
+            <div class="w-1/4 flex flex-col items-center justify-center">
+                <p class="text-lg max-sm:text-xs font-bold">${player_out.rating}</p>
+                <img src=${player_out.logo} class="max-md:size-auto" alt="">
+            </div>
+            <div class="center w-3/4">
+                <img src=${player_out.photo} class="w-full" alt="">
+            </div>
+        </div>
+        <p class="absolute bottom-0 text-[.7rem] max-md:text-[.5rem] h-2/5 px-1 text-center w-full font-bold">${player_out.name}</p>
+    `;
+
+    players_array.map((player) => {
+        document.getElementById(player.player_position_in_stadium).classList.remove("gold-shadow");
+        if(player.id != player_out.id && player.id != player_in.id){
+            document.getElementById(player.player_position_in_stadium).innerHTML = `
+                <img src="../assets/images/stadium/card-normal.webp" class="h-full" alt="">
+                <div class="h-3/5 w-full absolute top-0 flex pl-2 cursor-pointer" onclick="showPlayerDetails('${player.id}')">
+                    <div class="w-1/4 flex flex-col items-center justify-center">
+                        <p class="text-lg max-sm:text-xs font-bold">${player.rating}</p>
+                        <img src=${player.logo} class="max-md:size-auto" alt="">
+                    </div>
+                    <div class="center w-3/4">
+                        <img src=${player.photo} class="w-full" alt="">
+                    </div>
+                </div>
+                <p class="absolute bottom-0 text-[.7rem] max-md:text-[.5rem] h-2/5 px-1 text-center w-full font-bold">${player.name}</p>
+            `;
+        }
+    });
+
+    cancelBtn.classList.add("hidden");
+}
