@@ -224,3 +224,32 @@ window.insertPlayerIntoTeam = (player_id) => {
     })
     setTimeout(() => toastWarning.style.right = "-200%", 10000);
 }
+
+// function to handle remove a player from the starter or bench players
+window.removePlayerFromTeam = (player_id) => {
+    const player = players[player_id - 1];
+    const card_area = document.getElementById(player.player_position_in_stadium);
+
+    card_area.innerHTML = `
+        <img src="../assets/images/stadium/card-normal.webp" class="h-full" alt="">
+        <div class="absolute top-0 bottom-0 w-full center flex-col gap-2" id="${player.add_icons_id}">
+        <img onclick="addPlayerToTeam('${player.current_position}', '${player.player_position_in_stadium}', '${player.player_role}', '${player.bench_or_starter}', '${player.add_icons_id}')" src="../assets/images/icons/plus-square.svg" class="h-10 cursor-pointer" alt="">
+        <span class="text-darkGray">${player.current_position}</span>
+        </div>
+    `;
+    
+    const toast_succes = document.getElementById("toast-succes");
+    toast_succes.textContent = `Player removed succsefully from ${player.bench_or_starter}`;
+    toast_succes.style.right = "1%";
+    setTimeout(() => {
+        toast_succes.style.right = "-100%";
+    }, 2000);
+    
+    player.selected = false;
+    player.add_icons_id = "";
+    player.current_position = "";
+    player.player_position_in_stadium = "";
+    player.bench_or_starter = "";
+    player.player_role = "";
+    closeDetailsPopUpPlayer();
+}
