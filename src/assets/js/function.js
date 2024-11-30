@@ -1,10 +1,13 @@
+
 const body = document.querySelector("body");
 import data from "../data/players.json" with { type: "json" };
+import countries from "../data/countries.json" with { type: "json" };
+import clubs from "../data/clubs.json" with { type: "json" };
 const players = data.players;
 
-setTimeout(() => {
+// setTimeout(() => {
     document.querySelector(".loader").style.display = "none";
-}, 2500);
+// }, 2500);
 
 const background = document.querySelector(".background");
 const playerDetailsContainer = document.getElementById("player-details-container");
@@ -611,4 +614,21 @@ const switchDomValues = (player_in_id, player_out_id) => {
     player_out.current_position = tmp_player.current_position;
     player_out.player_position_in_stadium = tmp_player.player_position_in_stadium;
     player_out.player_role = tmp_player.player_role;
+}
+
+const add_player_icon = document.getElementById("add-player-icon");
+// handle showing the pop-up form after clicking the add new player icon
+add_player_icon.onclick = () => {
+    document.getElementById("add-player-form").classList.remove("hidden");
+    document.getElementById("add-player-form").classList.add("absolute");
+    body.classList.add("my-body-noscroll-class");
+    background.classList.add("blur");
+}
+
+// handle close the form pop-up
+window.hideFormPopUp = () => {
+    document.getElementById("add-player-form").classList.add("hidden");
+    document.getElementById("add-player-form").classList.remove("absolute");
+
+    closeDetailsPopUpPlayer();
 }
