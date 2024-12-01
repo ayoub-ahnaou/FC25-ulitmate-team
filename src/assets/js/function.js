@@ -283,10 +283,11 @@ window.substitutePlayer = (player_id) => {
 
     if(player.player_role === "goalkepeers"){
         if(!goalkepeers.length){
-            toast_error.textContent = "Aucun player possible to substitute with " +player.name+ ".";
+            toast_error.textContent = "Aucun player possible to substitute with " +player.name+ " in your Team.";
             toast_error.style.right = "1%";
             setTimeout(() => {
                 toast_error.style.right = "-100%";
+                toast_error.textContent = "";
             }, 2500);
             closeDetailsPopUpPlayer();
             return;
@@ -330,10 +331,11 @@ window.substitutePlayer = (player_id) => {
 
     if(player.player_role === "deffenders"){
         if(!deffenders.length){
-            toast_error.textContent = "Aucun player possible to substitute with " +player.name+ ".";
+            toast_error.textContent = "Aucun player possible to substitute with " +player.name+ " in your Team.";
             toast_error.style.right = "1%";
             setTimeout(() => {
                 toast_error.style.right = "-100%";
+                toast_error.textContent = "";
             }, 2500);
             closeDetailsPopUpPlayer();
             return;
@@ -410,10 +412,11 @@ window.substitutePlayer = (player_id) => {
 
     if(player.player_role === "midfielders"){
         if(!midfielders.length){
-            toast_error.textContent = "Aucun player possible to substitute with " +player.name+ ".";
+            toast_error.textContent = "Aucun player possible to substitute with " +player.name+ " in your Team.";
             toast_error.style.right = "1%";
             setTimeout(() => {
                 toast_error.style.right = "-100%";
+                toast_error.textContent = "";
             }, 2500);
             closeDetailsPopUpPlayer();
             return;
@@ -490,10 +493,11 @@ window.substitutePlayer = (player_id) => {
 
     if(player.player_role === "attackers"){
         if(!attackers.length){
-            toast_error.textContent = "Aucun player possible to substitute with " +player.name+ ".";
+            toast_error.textContent = "Aucun player possible to substitute with " +player.name+ " in your Team.";
             toast_error.style.right = "1%";
             setTimeout(() => {
                 toast_error.style.right = "-100%";
+                toast_error.textContent = "";
             }, 2500);
             closeDetailsPopUpPlayer();
             return;
@@ -700,28 +704,28 @@ window.handleUpdateStatsValues = () => {
 // function to handle creating new player
 window.handleCreateNewPlayer = () => {
     // get all inputs values from the form
-    const name = document.getElementById("name").value;
-    const position = document.getElementById("positions").value.toUpperCase();
-    const club = document.getElementById("clubs").value;
-    const country = document.getElementById("countries").value;
+    const name = document.getElementById("name");
+    const position = document.getElementById("positions");
+    const club = document.getElementById("clubs");
+    const country = document.getElementById("countries");
 
-    const stats = affectStrengthStats(position);
+    const stats = affectStrengthStats(position.value.toUpperCase());
     
     const player = {
         id: players.length + 1,
-        name: name,
+        name: name.value,
         photo: "../assets/images/icons/user-white.svg",
         large_pic: "../assets/images/icons/user-white.svg",
-        position: position,
-        nationality: country,
-        club: club,
+        position: position.value.toUpperCase(),
+        nationality: country.value,
+        club: club.value,
         rating: 99,
         salacted: false,
         stats: stats,
     };
 
-    affectCountryFlag(country, player);
-    affectClubLogo(club, player);
+    affectCountryFlag(country.value, player);
+    affectClubLogo(club.value, player);
 
     const isDataValid = validateData(player);
     if(isDataValid != 1){
@@ -761,6 +765,13 @@ window.handleCreateNewPlayer = () => {
         });
 
         hideFormPopUp();
+        name.value = ""; country.value = ""; position.value = ""; club.value = "";
+
+        const stats_Dom_values = document.getElementById("stats").children;
+        const array_of_stats = Array.from(stats_Dom_values);
+        for(let i=0; i<6; i++){
+            array_of_stats[i].children[1].value = "";
+        }
     }
 
 }
