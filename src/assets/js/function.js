@@ -658,6 +658,7 @@ const add_player_icon = document.getElementById("add-player-icon");
 add_player_icon.onclick = () => {
     document.getElementById("add-player-form").classList.remove("hidden");
     document.getElementById("add-player-form").classList.add("absolute");
+    document.getElementById("add-player-form").classList.add("center");
     body.classList.add("my-body-noscroll-class");
     background.classList.add("blur");
 }
@@ -667,6 +668,7 @@ document.addEventListener("click", (e) => {
     if(e.target.id == "add-player-form"){
         document.getElementById("add-player-form").classList.add("hidden");
         document.getElementById("add-player-form").classList.remove("absolute");
+        document.getElementById("add-player-form").classList.remove("center");
 
         closeDetailsPopUpPlayer();
     }
@@ -676,6 +678,7 @@ document.addEventListener("click", (e) => {
 window.hideFormPopUp = () => {
     document.getElementById("add-player-form").classList.add("hidden");
     document.getElementById("add-player-form").classList.remove("absolute");
+    document.getElementById("add-player-form").classList.remove("center");
 
     closeDetailsPopUpPlayer();
 }
