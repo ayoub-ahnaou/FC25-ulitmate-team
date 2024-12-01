@@ -7,7 +7,7 @@ const players = data.players;
 
 setTimeout(() => {
     document.querySelector(".loader").style.display = "none";
-}, 2500);
+}, 2000);
 
 const background = document.querySelector(".background");
 const playerDetailsContainer = document.getElementById("player-details-container");
