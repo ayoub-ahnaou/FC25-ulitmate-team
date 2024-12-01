@@ -5,9 +5,9 @@ import countries from "../data/countries.json" with { type: "json" };
 import clubs from "../data/clubs.json" with { type: "json" };
 const players = data.players;
 
-// setTimeout(() => {
+setTimeout(() => {
     document.querySelector(".loader").style.display = "none";
-// }, 2500);
+}, 2500);
 
 const background = document.querySelector(".background");
 const playerDetailsContainer = document.getElementById("player-details-container");
@@ -282,6 +282,15 @@ window.substitutePlayer = (player_id) => {
     attackers = players.filter((player) => (player.position === "RW" || player.position === "LW" || player.position === "ST") && player.selected && player.id != player_id);
 
     if(player.player_role === "goalkepeers"){
+        if(!goalkepeers.length){
+            toast_error.textContent = "Aucun player possible to substitute with " +player.name+ ".";
+            toast_error.style.right = "1%";
+            setTimeout(() => {
+                toast_error.style.right = "-100%";
+            }, 2500);
+            closeDetailsPopUpPlayer();
+            return;
+        }
         cancelBtn.classList.toggle("hidden");
         goalkepeers.map((player_to_substitute) => {
             document.getElementById(player_to_substitute.player_position_in_stadium).classList.add("gold-shadow");
@@ -320,6 +329,15 @@ window.substitutePlayer = (player_id) => {
     }
 
     if(player.player_role === "deffenders"){
+        if(!deffenders.length){
+            toast_error.textContent = "Aucun player possible to substitute with " +player.name+ ".";
+            toast_error.style.right = "1%";
+            setTimeout(() => {
+                toast_error.style.right = "-100%";
+            }, 2500);
+            closeDetailsPopUpPlayer();
+            return;
+        }
         cancelBtn.classList.toggle("hidden");
         deffenders.map((player_to_substitute) => {
             document.getElementById(player_to_substitute.player_position_in_stadium).classList.add("gold-shadow");
@@ -391,6 +409,15 @@ window.substitutePlayer = (player_id) => {
     }
 
     if(player.player_role === "midfielders"){
+        if(!midfielders.length){
+            toast_error.textContent = "Aucun player possible to substitute with " +player.name+ ".";
+            toast_error.style.right = "1%";
+            setTimeout(() => {
+                toast_error.style.right = "-100%";
+            }, 2500);
+            closeDetailsPopUpPlayer();
+            return;
+        }
         cancelBtn.classList.toggle("hidden");
         midfielders.map((player_to_substitute) => {
             document.getElementById(player_to_substitute.player_position_in_stadium).classList.add("gold-shadow");
@@ -462,6 +489,15 @@ window.substitutePlayer = (player_id) => {
     }
 
     if(player.player_role === "attackers"){
+        if(!attackers.length){
+            toast_error.textContent = "Aucun player possible to substitute with " +player.name+ ".";
+            toast_error.style.right = "1%";
+            setTimeout(() => {
+                toast_error.style.right = "-100%";
+            }, 2500);
+            closeDetailsPopUpPlayer();
+            return;
+        }
         cancelBtn.classList.toggle("hidden");
         attackers.map((player_to_substitute) => {
             document.getElementById(player_to_substitute.player_position_in_stadium).classList.add("gold-shadow");
