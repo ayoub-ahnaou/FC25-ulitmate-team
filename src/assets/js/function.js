@@ -793,33 +793,4 @@ function affectClubLogo(club, player) {
             return;
         }
     })
-=======
-    }
-
-    let isDataValid = validateData(player);
-    console.log(isDataValid);
-}
-
-function validateData(playerData) {
-    const nameRegex = /^[^:;?!@&#$<>&'"]+$/;
-
-    const emptyRegex = /^\s*$/;
-
-    let isExist = players.find(player => player.name.toLocaleLowerCase() === playerData.name.toLocaleLowerCase());
-
-    if (isExist) return "Player name is already exist.";
-
-    if (emptyRegex.test(playerData.name)) return "Please fill the name field.";
-
-    if (!nameRegex.test(playerData.name)) return "Invalid characters in the name field.";
-    
-    if (emptyRegex.test(playerData.position)) return "Please select the player position.";
-
-    if (emptyRegex.test(playerData.club)) return "Please select a club.";
-
-    if (emptyRegex.test(playerData.nationality)) return "Please select a country.";
-
-    if (isNaN(playerData.rating)) return "Please fill the player stats.";
-
-    return 1;
 }
