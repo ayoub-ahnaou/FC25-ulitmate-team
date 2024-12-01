@@ -2,7 +2,7 @@
 ### Contexte de Projet
 Application Web de gestion d'équipe Ultimate Team pour EA FC 25, permettant aux utilisateurs de créer, personnaliser et gérer leurs formations tactiques et leurs équipes de joueurs via une interface interactive et réactive.
 
-![alt text](image.png)
+![alt text](./src/assets/images/readme/screen-home.png)
 
 ### Liens exterieurs
 - [**Live Demo.**](https://ayoub-ahnaou.github.io/FC25-ulitmate-team/src/)
