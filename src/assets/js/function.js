@@ -710,8 +710,8 @@ window.handleCreateNewPlayer = () => {
     const player = {
         id: players.length + 1,
         name: name,
-        photo: "../assets/images/stadium/unknown-player.png",
-        large_pic: "../assets/images/stadium/unknown-player.png",
+        photo: "../assets/images/icons/user-white.svg",
+        large_pic: "../assets/images/icons/user-white.svg",
         position: position,
         nationality: country,
         club: club,
