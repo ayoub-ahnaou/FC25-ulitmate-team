@@ -327,6 +327,10 @@ window.substitutePlayer = (player_id) => {
             </div>
             <p class="absolute bottom-0 text-[.7rem] max-md:text-[.5rem] h-2/5 px-1 text-center w-full font-bold">${player.name}</p>
         `;
+
+        cancelBtn.onclick = () => {
+            cancelSubstitution(goalkepeers, player.id);
+        }
     }
 
     if(player.player_role === "deffenders"){
