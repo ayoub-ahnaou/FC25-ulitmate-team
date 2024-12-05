@@ -7,25 +7,30 @@
     <link rel="stylesheet" href="output.css">
     <link rel="stylesheet" href="assets/css/input.css">
 </head>
-<body>
+<body class="">
     <div class="flex flex-col justify-between h-[100vh]">
         <nav class="center py-2 text-black bg-white sticky top-0 z-10">
             <div class="container flex justify-between items-center h-full">
                 <a href="index.html">
                     <img src="assets/images/icons/fc25-logo.webp" class="h-8" alt="">
                 </a>
-                <div class="flex gap-1 h-full py-1 cursor-pointer">
-                    <img src="assets/images/icons/user-black.svg" class="h-5 max-sm:h-4 font-bold" alt="">
-                    <p class="text-base">Account</p>
+                <div class="flex items-center gap-4">
+                    <div class="flex gap-1 h-full py-1 cursor-pointer">
+                        <img src="assets/images/icons/user-black.svg" class="h-5 max-sm:h-4 font-bold" alt="">
+                        <p class="text-base">Account</p>
+                    </div>
+                    <img src="assets/images/icons/moon.svg" id="moon-icon" class="h-5 cursor-pointer hidden dark:block" alt="">
+                    <img src="assets/images/icons/sun.svg" id="sun-icon" class="h-5 cursor-pointer block dark:hidden" alt="">
                 </div>
             </div>
         </nav>
     
-        <section class="flex-1">
-            <img src="assets/images/fc25-hero-vinijr.jpg" class="xl:h-[400px] object-cover w-full object-top" alt="">
+        <section class="flex-1 dark:bg-softGray">
+            <img src="assets/images/fc25-hero-vinijr.jpg" class="xl:h-[400px] object-cover w-full object-top dark:hidden" alt="">
+            <img src="https://tmssl.akamaized.net/images/foto/galerie/kevin-de-bruyne-manchester-city-2024-2025-1050157102h-1726739440-148513.jpg" class="xl:h-[400px] object-cover w-full object-top hidden dark:block" alt="">
             <div class="max-md:w-full p-8 max-md:p-4 center flex-col gap-4">
-                <h1 class="font-gaMaamli text-4xl w-full">Ultimate Team Manager: Customize Your EA FC 25 Team!</h1>
-                <p class="text-gray-300 pr-24 max-md:pr-0">
+                <h1 class="font-gaMaamli text-4xl w-full text-white dark:text-black">Ultimate Team Manager: Customize Your EA FC 25 Team!</h1>
+                <p class="text-gray-300 dark:text-black pr-24 max-md:pr-0">
                     Welcome to Ultimate Team Manager—your go-to app for crafting the perfect EA FC 25 experience. Design custom formations, adjust player positions, and create strategies to lead your team to victory. Ready to build a legendary team?
                 </p>
                 <a href="pages/get-started.html" class="w-full">
@@ -34,14 +39,14 @@
             </div>
         </section>
     
-        <footer class="center py-8 bg-black">
+        <footer class="center py-8 bg-black dark:bg-white">
             <div class="container flex flex-col gap-4 text-xs">
                 <div class="flex justify-between items-center w-full">
-                    <div class="flex items-center gap-2">
-                        <img class="size-6" src="assets/images/footer/ea-medallion-white.svg" alt="">
+                    <div class="flex items-center gap-2 dark:text-black">
+                        <img class="size-6 bg-black rounded-full" src="assets/images/footer/ea-medallion-white.svg" alt="">
                         <p>EA-SPORTS 25</p>
                     </div>
-                    <ul class="flex items-center gap-4 h-10">
+                    <ul class="flex items-center gap-4 h-10 bg-black px-2">
                         <img src="assets/images/footer/instagram.svg" class="size-4" alt="">
                         <img src="assets/images/footer/youtube.svg" class="size-4" alt="">
                         <img src="assets/images/footer/tiktok.svg" class="size-4" alt="">
