@@ -4,6 +4,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Ga+Maamli&family=Russo+One&display=swap');
 
+* { @apply transition-colors duration-150; }
 :root {
     /* define the color of palette */
     --mainBlack: #1A1A1A;

@@ -614,14 +614,14 @@ video {
   z-index: 50;
 }
 
-.mx-32 {
-  margin-left: 8rem;
-  margin-right: 8rem;
+.mx-44 {
+  margin-left: 11rem;
+  margin-right: 11rem;
 }
 
-.mx-36 {
-  margin-left: 9rem;
-  margin-right: 9rem;
+.mx-48 {
+  margin-left: 12rem;
+  margin-right: 12rem;
 }
 
 .mx-56 {
@@ -632,36 +632,6 @@ video {
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
-}
-
-.mx-4 {
-  margin-left: 1rem;
-  margin-right: 1rem;
-}
-
-.mx-48 {
-  margin-left: 12rem;
-  margin-right: 12rem;
-}
-
-.mx-6 {
-  margin-left: 1.5rem;
-  margin-right: 1.5rem;
-}
-
-.mx-64 {
-  margin-left: 16rem;
-  margin-right: 16rem;
-}
-
-.mx-44 {
-  margin-left: 11rem;
-  margin-right: 11rem;
-}
-
-.mx-3 {
-  margin-left: 0.75rem;
-  margin-right: 0.75rem;
 }
 
 .mb-1 {
@@ -896,6 +866,10 @@ video {
   overflow: hidden;
 }
 
+.rounded-full {
+  border-radius: 9999px;
+}
+
 .rounded-lg {
   border-radius: 0.5rem;
 }
@@ -1038,6 +1012,11 @@ video {
 .px-1 {
   padding-left: 0.25rem;
   padding-right: 0.25rem;
+}
+
+.px-2 {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
 }
 
 .px-3 {
@@ -1267,6 +1246,12 @@ video {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+* {
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
 :root {
   /* define the color of palette */
   --mainBlack: #1A1A1A;
@@ -1425,6 +1410,29 @@ body.my-body-noscroll-class {
   --tw-ring-color: rgb(59 130 246 / var(--tw-ring-opacity, 1));
 }
 
+.dark\:block:is(.dark *) {
+  display: block;
+}
+
+.dark\:hidden:is(.dark *) {
+  display: none;
+}
+
+.dark\:bg-softGray:is(.dark *) {
+  --tw-bg-opacity: 1;
+  background-color: rgb(245 245 245 / var(--tw-bg-opacity, 1));
+}
+
+.dark\:bg-white:is(.dark *) {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
+}
+
+.dark\:text-black:is(.dark *) {
+  --tw-text-opacity: 1;
+  color: rgb(0 0 0 / var(--tw-text-opacity, 1));
+}
+
 @media not all and (min-width: 1280px) {
   .max-xl\:mx-32 {
     margin-left: 8rem;
@@ -1434,11 +1442,6 @@ body.my-body-noscroll-class {
   .max-xl\:mx-44 {
     margin-left: 11rem;
     margin-right: 11rem;
-  }
-
-  .max-xl\:mx-3 {
-    margin-left: 0.75rem;
-    margin-right: 0.75rem;
   }
 }
 
@@ -1563,22 +1566,5 @@ body.my-body-noscroll-class {
 @media (min-width: 1280px) {
   .xl\:h-\[400px\] {
     height: 400px;
-  }
-}
-
-@media (min-width: 1536px) {
-  .\32xl\:mx-44 {
-    margin-left: 11rem;
-    margin-right: 11rem;
-  }
-
-  .\32xl\:mx-64 {
-    margin-left: 16rem;
-    margin-right: 16rem;
-  }
-
-  .\32xl\:mx-48 {
-    margin-left: 12rem;
-    margin-right: 12rem;
   }
 }
