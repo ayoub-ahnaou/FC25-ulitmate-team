@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../assets/css/input.css">
     <script type="module" src="../assets/js/script.js" defer></script>
     <script type="module" src="../assets/js/function.js" defer></script>
+    <script type="module" src="../assets/js/loader.js" defer></script>
 </head>
 <!-- TODO: REmove those class after finishing the form interface (my-body..., blur) -->
 <body class="">
@@ -17,16 +18,20 @@
                 <a href="../index.html">
                     <img src="../assets/images/icons/fc25-logo.webp" class="h-8" alt="">
                 </a>
-                <div class="flex gap-1 h-full py-1 cursor-pointer">
-                    <img src="../assets/images/icons/user-black.svg" class="h-5 max-sm:h-4 font-bold" alt="">
-                    <p class="text-base">Account</p>
+                <div class="flex items-center gap-4">
+                    <div class="flex gap-1 h-full py-1 cursor-pointer">
+                        <img src="../assets/images/icons/user-black.svg" class="h-5 max-sm:h-4 font-bold" alt="">
+                        <p class="text-base">Account</p>
+                    </div>
+                    <img src="../assets/images/icons/moon.svg" id="moon-icon" class="h-5 cursor-pointer hidden dark:block" alt="">
+                    <img src="../assets/images/icons/sun.svg" id="sun-icon" class="h-5 cursor-pointer block dark:hidden" alt="">
                 </div>
             </div>
         </nav>
 
         <div class="flex-grow flex max-md:flex-col gap-4 p-4">
             <div class="w-2/3 max-md:w-full flex-col relative">
-                <div class="h-28 max-md:h-20 w-full flex gap-4 px-8 max-md:px-0 py-4 bg-black">
+                <div class="h-28 max-md:h-20 w-full flex gap-4 px-8 max-md:px-0 py-4 bg-black dark:bg-white dark:text-black">
                     <img src="../assets/images/codm-team.png" class="h-full" alt="">
                     <div class="flex flex-col justify-center h-full">
                         <span class="text-xl">Club Omnisports De Meknès</span>
@@ -132,7 +137,7 @@
                 </div>
 
                 <!-- changments -->
-                <div class="w-full mt-8 px-8 max-md:px-0 flex flex-col gap-6 bg-black py-4">
+                <div class="w-full mt-8 px-8 max-md:px-0 flex flex-col gap-6 dark:bg-white bg-black py-4">
                     <span class="text-goldColor w-full font-gaMaamli text-2xl">Substitute Players</span>
                     <div class="flex h-32 max-md:h-24 gap-4 max-md:gap-1">
                         <div class="h-full relative overflow-hidden img-shadow-effect" id="goalkepeer-bench">
@@ -188,27 +193,27 @@
                 </div>
             </div>
 
-            <div class="bg-black flex-1 w-1/3 max-md:w-full" id="all-players-list">
+            <div class="bg-black dark:bg-white flex-1 w-1/3 max-md:w-full" id="all-players-list">
                 <div class="p-2 flex justify-between items-center">
                     <span class="text-goldColor w-full font-gaMaamli text-2xl">All Players</span>
                     <img src="../assets/images/icons/add-user.svg" class="h-6 cursor-pointer" id="add-player-icon" title="Add new player" alt="">
                 </div>
                 <div class="h-[80vh] max-md:h-[30vh] overflow-auto players-container">
-                    <div class="bg-black p-2 flex flex-col items-center" id="players-list">
+                    <div class="p-2 flex flex-col items-center" id="players-list">
                         <!-- players renderd with javascript line 5 -->
                     </div>
                 </div>
             </div>
         </div>
 
-        <footer class="center py-8 bg-black">
+        <footer class="center py-8 bg-black dark:bg-white">
             <div class="container flex flex-col gap-4 text-xs">
                 <div class="flex justify-between items-center w-full">
-                    <div class="flex items-center gap-2">
-                        <img class="size-6" src="../assets/images/footer/ea-medallion-white.svg" alt="">
+                    <div class="flex items-center gap-2 dark:text-black">
+                        <img class="size-6 bg-black rounded-full" src="../assets/images/footer/ea-medallion-white.svg" alt="">
                         <p>EA-SPORTS 25</p>
                     </div>
-                    <ul class="flex items-center gap-4 h-10">
+                    <ul class="flex items-center gap-4 h-10 bg-black px-2">
                         <img src="../assets/images/footer/instagram.svg" class="size-4" alt="">
                         <img src="../assets/images/footer/youtube.svg" class="size-4" alt="">
                         <img src="../assets/images/footer/tiktok.svg" class="size-4" alt="">
@@ -242,20 +247,20 @@
     </div>
 
     <div class="h-[100vh] hidden top-0 w-full max-md:p-4 text-base" id="add-player-form">
-        <section class="rounded-lg h-auto w-3/5 max-md:w-full bg-darkGray flex flex-col py-4" id="main-form">
+        <section class="rounded-lg h-auto w-3/5 max-md:w-full bg-darkGray dark:bg-white shadow-lg dark:text-black flex flex-col py-4" id="main-form">
             <h1 class="center font-gaMaamli p-4 text-2xl">Create new Player</h1>
 
             <div class="flex flex-col p-4">
                 <div class="flex gap-2 items-end mb-4 max-sm:flex-col">
                     <div class="flex flex-col max-sm:w-full gap-2 flex-1">
                         <label for="name" class="text-base">Full Name</label>
-                        <input type="text" id="name" class="text-gray-300 bg-black focus:border  outline-none border-none px-3 py-2 rounded-lg" placeholder="eg: Ayoub Ahnaou" autocomplete="off">
+                        <input type="text" id="name" class="text-gray-300 bg-black dark:bg-softGray focus:border dark:placeholder:text-gray-400 dark:text-gray-600 outline-none border-none px-3 py-2 rounded-lg" placeholder="eg: Ayoub Ahnaou" autocomplete="off">
                     </div>
 
                     <div class="flex items-end max-sm:w-full justify-between">
                         <div class="flex flex-col w-full gap-2">
                             <label for="positions" class="text-base">Position</label>
-                            <select onchange="handleUpdateStatsValues()" id="positions" class="bg-black outline-none text-gray-300 text-sm rounded-lg border border-transparent focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 pr-0">
+                            <select onchange="handleUpdateStatsValues()" id="positions" class="bg-black dark:bg-softGray outline-none text-gray-300 dark:text-gray-600 text-sm rounded-lg border border-transparent focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 pr-0">
                                 <option value="" selected="">Choose a Position</option>
                                 <option value="st">ST</option>
                                 <option value="lw">LW</option>
@@ -273,8 +278,8 @@
                 <div class="flex gap-2 mb-4">
                     <div class="flex items-end justify-between flex-1">
                         <div class="flex flex-col flex-1">
-                            <label for="clubs" class="block mb-2 text-sm font-medium text-white">Club</label>
-                            <select id="clubs" class="bg-black outline-none text-gray-300 text-sm rounded-lg border border-transparent focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 pr-0">
+                            <label for="clubs" class="block mb-2 text-sm font-medium text-white dark:text-black">Club</label>
+                            <select id="clubs" class="bg-black outline-none text-gray-300 dark:bg-softGray text-sm dark:text-gray-600 rounded-lg border border-transparent focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 pr-0">
                                 <option value="" selected="">Choose a Club</option>
                                 <option value="Inter Miami">Inter Miami</option>
                                 <option value="Al Nassr">Al Nassr</option>
@@ -291,8 +296,8 @@
 
                     <div class="flex items-end justify-between flex-1">
                         <div class="flex flex-col flex-1">
-                            <label for="countries" class="block mb-2 text-sm font-medium text-white">Country</label>
-                            <select id="countries" class="bg-black outline-none border border-transparent focus:ring-blue-500 focus:border-blue-500 text-gray-300 text-sm rounded-lg block w-full p-2.5 pr-0">
+                            <label for="countries" class="block mb-2 text-sm font-medium text-white dark:text-black">Country</label>
+                            <select id="countries" class="bg-black outline-none border border-transparent focus:ring-blue-500 focus:border-blue-500 text-gray-300 dark:bg-softGray dark:text-gray-600 text-sm rounded-lg block w-full p-2.5 pr-0">
                                 <option value="" selected="">Choose a Country</option>
                                 <option value="Argentina">Argentina</option>
                                 <option value="Portugal">Portugal</option>
@@ -312,33 +317,33 @@
                 <div class="flex flex-wrap gap-1 text-sm justify-between mb-12" id="stats">
                     <div class="flex flex-col flex-1">
                         <label class="mb-1 text-base">PAC</label>
-                        <input type="number" class="text-white bg-black outline-none rounded-lg p-1 text-center" placeholder="0 - 100">
+                        <input type="number" class="text-white dark:text-black dark:bg-softGray bg-black outline-none rounded-lg p-1 text-center" placeholder="0 - 100">
                     </div>
                     <div class="flex flex-col flex-1">
                         <label class="mb-1 text-base">SHO</label>
-                        <input type="number" class="text-white bg-black outline-none rounded-lg p-1 text-center" placeholder="0 - 100">
+                        <input type="number" class="text-white dark:text-black dark:bg-softGray bg-black outline-none rounded-lg p-1 text-center" placeholder="0 - 100">
                     </div>
                     <div class="flex flex-col flex-1">
                         <label class="mb-1 text-base">PAS</label>
-                        <input type="number" class="text-white bg-black outline-none rounded-lg p-1 text-center" placeholder="0 - 100">
+                        <input type="number" class="text-white dark:text-black dark:bg-softGray bg-black outline-none rounded-lg p-1 text-center" placeholder="0 - 100">
                     </div>
                     <div class="flex flex-col flex-1">
                         <label class="mb-1 text-base">DRI</label>
-                        <input type="number" class="text-white bg-black outline-none rounded-lg p-1 text-center" placeholder="0 - 100">
+                        <input type="number" class="text-white dark:text-black dark:bg-softGray bg-black outline-none rounded-lg p-1 text-center" placeholder="0 - 100">
                     </div>
                     <div class="flex flex-col flex-1">
                         <label class="mb-1 text-base">DEF</label>
-                        <input type="number" class="text-white bg-black outline-none rounded-lg p-1 text-center" placeholder="0 - 100">
+                        <input type="number" class="text-white dark:text-black dark:bg-softGray bg-black outline-none rounded-lg p-1 text-center" placeholder="0 - 100">
                     </div>
                     <div class="flex flex-col flex-1">
                         <label class="mb-1 text-base">PHY</label>
-                        <input type="number" class="text-white bg-black outline-none rounded-lg p-1 text-center" placeholder="0 - 100">
+                        <input type="number" class="text-white dark:text-black dark:bg-softGray bg-black outline-none rounded-lg p-1 text-center" placeholder="0 - 100">
                     </div>
                 </div>
 
                 <div class="flex gap-2">
-                    <button class="block mx-auto bg-gray-600 py-1 px-6 text-base rounded-lg" onclick="hideFormPopUp()">Cancel</button>
-                    <button class="block mx-auto w-full bg-goldColor py-1 px-4 text-base rounded-lg" onclick="handleCreateNewPlayer()">Create +</button>
+                    <button class="block mx-auto bg-gray-600 dark:text-white py-1 px-6 text-base rounded-lg" onclick="hideFormPopUp()">Cancel</button>
+                    <button class="block mx-auto w-full bg-goldColor dark:text-white py-1 px-4 text-base rounded-lg" onclick="handleCreateNewPlayer()">Create +</button>
                 </div>
 
             </div>
