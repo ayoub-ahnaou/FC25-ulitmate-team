@@ -21,7 +21,7 @@ window.showPlayerDetails = (player_id) => {
     playerDetailsContainer.classList.remove("hidden")
     playerDetailsContainer.classList.add("fixed");
     playerDetailsContainer.innerHTML = `
-        <div class="flex w-[400px] h-[400px] max-md:h-auto rounded-md overflow-hidden max-md:flex-col relative" id="player-details">
+        <div class="flex w-[400px] h-[400px] max-md:h-auto rounded-md overflow-hidden max-md:flex-col relative shadow-lg" id="player-details">
             <div class="max-md:w-full w-2/3 relative">
                 <img src=${player.large_pic} class="h-full max-md:h-[350px] w-full object-cover" alt="">
                 <span class="absolute top-0 p-8 text-6xl drop-shadow-[5px_5px_20px_rgba(255,255,255,0.99)] text-goldColor">${player.rating}</span>
@@ -36,7 +36,7 @@ window.showPlayerDetails = (player_id) => {
                     </div>
                 </div>
             </div>
-            <div class="bg-darkGray w-1/3 h-full max-md:w-full flex flex-col p-4 gap-2 max-md:gap-4 justify-between">
+            <div class="bg-darkGray dark:bg-white dark:text-black w-1/3 h-full max-md:w-full flex flex-col p-4 gap-2 max-md:gap-4 justify-between">
                 <div class="flex flex-col gap-2" id="stats-details">    </div>
                 <div class="h-10 max-md:mt-2 items-center flex justify-end gap-2" id="player-option">
                     <span class="cursor-pointer" onclick="playerOption()">More Option</span>
@@ -200,7 +200,7 @@ function updateListPlayers(array) {
     playersList.innerHTML = "";
     array.map((player) => {
         playersList.innerHTML += `
-            <div onclick="appendPlayerToTeam('${player.id}')" class="h-12 max-md:h-10 w-full p-1 hover:bg-darkGray transition-all delay-150 ease-in-out cursor-pointer flex gap-4 items-center">
+            <div onclick="appendPlayerToTeam('${player.id}')" class="h-12 max-md:h-10 w-full p-1 hover:bg-darkGray dark:hover:bg-gray-50 dark:text-black transition-all delay-150 ease-in-out cursor-pointer flex gap-4 items-center">
                 <img class="h-full" src=${player.photo} alt="${player.name}">
                 <div class="flex flex-col h-full text-[10px] justify-center">
                     <span>${player.name}</span>
