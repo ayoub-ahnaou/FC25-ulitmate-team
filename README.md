@@ -18,6 +18,10 @@ Application Web de gestion d'équipe Ultimate Team pour EA FC 25, permettant aux
 
 - **Responsive Design**: Offre une réactivité globale pour tous les appareils, qu'il s'agisse d'ordinateurs portables, de tablettes ou de téléphones mobiles.
 
+- **Mode Sombre et Mode Clair (Dark/Light Mode)**: L'utilisateur peut basculer entre un mode sombre et un mode clair.
+    - Transition fluide grâce à des animations CSS.
+    - Les préférences de mode sont sauvegardées localement pour une expérience utilisateur personnalisée.
+
 ### Technologies et Outils utilisées
 - **HTML**
 - **Framwork TailwindCSS**
